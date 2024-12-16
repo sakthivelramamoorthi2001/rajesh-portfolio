@@ -121,9 +121,23 @@
 .skills-section .scroll-item img {
   margin-right: 8px;
 }
+
+.scroll-container {
+  overflow: hidden; /* Hide the overflow for a clean look */
+  width: 100%; /* Set container width */
+  position: relative;
+}
+
 .scroll-content {
-  display: flex; /* Align items in a row */
-  animation: scroll-circle 10s linear infinite;
+  display: flex;
+  /* animation: scroll-circle 10s linear infinite; Smooth infinite scrolling */
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.scroll-content .content {
+  width: fit-content; /* Ensure items only take their needed space */
+  margin: 0 20px; /* Add spacing between items */
 }
 
 @keyframes scroll-circle {
@@ -131,12 +145,8 @@
     transform: translateX(0); /* Start at initial position */
   }
   100% {
-    transform: translateX(-100%); /* Move entire width of content */
+    transform: translateX(-50%); /* Move by half the content width */
   }
-}
-
-.scroll-container {
-  /* width: 100%;  */
 }
 
 .scroll-container:hover .scroll-content {
@@ -170,20 +180,42 @@
   margin-bottom: 40px;
 }
 
+.live-projects .project-card:hover {
+  background-color: #3d3d3d;
+  background: #3d3d3d;
+}
+
+.live-projects .project-card:hover .badge-live {
+  background-color: #3d3d3d;
+  color: white;
+}
+
+.live-projects .project-card:hover .badge-category {
+  background-color: #3d3d3d;
+  color: white;
+}
+
 .live-projects .project-card-type1 {
   background: linear-gradient(to top, #0b6af0, #22448f);
 }
 
 .live-projects .project-card-type2 {
-  background: linear-gradient(to top, #24a186, #134762);
+  background: linear-gradient(to top, #24A186, #134762);
 }
 
 .live-projects .project-card-type3 {
-  background: linear-gradient(to top, #000000, #3d3d3d);
+  background: linear-gradient(to top, #5B77EB, #311A64);
 }
 
 .live-projects .project-card-type4 {
-  background: linear-gradient(to top, #5b77eb, #311a64);
+  background: linear-gradient(to top, #505564, #000000);
+}
+.live-projects .project-card-type5 {
+  background: linear-gradient(to top, #A9283C, #353D71);
+}
+
+.live-projects .project-card-type6 {
+  background: linear-gradient(to top, #FBBC04, #C1930C);
 }
 
 .live-projects .project-image-container img {
@@ -195,7 +227,7 @@
 
 .live-projects .project-info {
   text-align: left;
-  margin: 20px 0px 30px 30px;
+  margin: 30px 20px;
 }
 
 .live-projects .project-info h3 {
@@ -292,7 +324,6 @@
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 16px;
 }
 
 .creation-card .creation-title {
@@ -308,10 +339,13 @@
 }
 
 .more-creations-section .creation-card {
-  width: calc(33% - 32px);
+  width: calc(31% - 16px);
   border: 1px solid #dddddd;
   padding: 12px;
   border-radius: 20px;
+  min-height: 500px;
+  overflow: hidden;
+  margin: 8px;
 }
 
 .more-creations-section .app-icons {
@@ -321,16 +355,15 @@
 .more-creations-section .app-icon {
   border: 1px solid black;
   border-radius: 100px;
-  padding: 6px 14px;
+  padding: 5px 12px;
   font-family: "Gilroy-Regular", sans-serif;
   font-weight: 400;
-  width: fit-content;
-  gap: 4px;
-  flex-wrap: wrap;
+  min-width: 112px;
+  gap: 2px;
 }
 
 .more-creations-section .app-icon .creation-app-icon-img {
-  font-size: 12px;
+  width: 12px;
 }
 
 .more-creations-section .app-icon span {
@@ -428,12 +461,8 @@
     width: calc(80% - 10px) !important;
   }
 
-   .more-creations-section .creation-card{
+  .more-creations-section .creation-card {
     width: 100%;
-  }
-
-  .design-process .content_arrow {
-    display: none;
   }
 
   .design-process .content {
@@ -448,7 +477,7 @@
   }
 
   .live-projects .project-cards {
-    gap: 20px;
+    justify-content: center;
   }
 
   .portfolio-header .portfolio-header-content {
@@ -507,7 +536,7 @@
 }
 
 .about {
-  margin-top: 60px;
+  margin: 60px 0px;
   width: 100%;
 }
 

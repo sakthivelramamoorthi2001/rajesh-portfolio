@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/profile.css";
-import profileImage from "../assets/profile_img.png";
+import profileImage from "../assets/profile.png";
 import ViewResume from "../assets/viewResume.svg";
 import about from "../assets/about.png";
 import { useNavigate } from "react-router-dom";
@@ -8,24 +8,17 @@ import MobileIcon from "../assets/mobile-app-icon.svg";
 import asset from "../assets";
 
 import { useEffect, useRef } from "react";
+import { uniqueIdForProject } from "../Const";
 
 const ScrollingAnimation = () => {
-  const contentRef = useRef(null);
-
-  useEffect(() => {
-    const content = contentRef.current;
-
-    if (!content) return;
-
-    // const clonedContent = content.cloneNode(true); // Clone the content
-    // content.parentNode.appendChild(clonedContent); // Append it to the container
-  }, []);
+  // Duplicate items multiple times to cover more than 2x the screen width
+  const repeatedItems = [...items, ...items];
 
   return (
     <div className="scroll-container">
-      <div className="scroll-content2" ref={contentRef}>
-        {items.map((i) => (
-          <>
+      {/* <div className="scroll-content">
+        {repeatedItems.map((item, index) => (
+          <div key={index} className="flex content">
             <svg
               width="21"
               height="22"
@@ -38,10 +31,10 @@ const ScrollingAnimation = () => {
                 fill="#4864EC"
               />
             </svg>
-            <span>{i}</span>
-          </>
+            <span>{item}</span>
+          </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
@@ -49,9 +42,9 @@ const ScrollingAnimation = () => {
 const Profile = () => {
   const navigator = useNavigate();
   return (
-    <div className="portfolio-container">
+    <div className="portfolio-container ">
       <header className="portfolio-header">
-        <section className="portfolio-header-content">
+        <section className="portfolio-header-content mobile-not-show">
           <h1 className="portfolio-name">
             Rajeshkanna <span>Jayabalan</span>
           </h1>
@@ -67,6 +60,7 @@ const Profile = () => {
             alt="Rajeshkanna Jayabalan"
             className="profile-image"
           />
+
           <h2 className="portfolio-greeting">- Hello</h2>
           <h3 className="portfolio-title">
             <span className="highlighted-name">
@@ -81,6 +75,13 @@ const Profile = () => {
             cross-functional <br />
             partnerships, and thriving in complex, dynamic environments.
           </p>
+
+          <div className="web-not-show  mobile-show flex">
+            <button className="view-resume-button flex ">
+              <span>View Resume </span>
+              <img src={ViewResume} />
+            </button>
+          </div>
         </section>
       </header>
 
@@ -101,7 +102,7 @@ const Profile = () => {
             </li>
           ))}
         </ul> */}
-      <ScrollingAnimation />
+
       {/* </section> */}
 
       {/* Live Projects Section */}
@@ -110,8 +111,9 @@ const Profile = () => {
         <div className="project-cards ">
           {projects.map((project) => (
             <div
-              className={project.CardClass + " " + "project-card "}
+              className={project.CardClass + " " + "project-card  "}
               key={project.id}
+              onClick={() => navigator("/project/" + project.uniqueId)}
             >
               <div className="project-image-container">
                 <img
@@ -119,6 +121,7 @@ const Profile = () => {
                   alt={project.title}
                   className="project-image"
                 />
+                {/* <video  className="project-image" src="https://static.vecteezy.com/system/resources/previews/052/602/772/mp4/social-media-marketing-3d-animated-concept-video.mp4"></video> */}
                 <div className={"project-badges"}>
                   <button className="badge-live">Live</button>
                   <button className={project.class + " " + "badge-category"}>
@@ -130,8 +133,8 @@ const Profile = () => {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <button
-                  onClick={() => navigator("/project/" + project.id)}
-                  className="view-case-button"
+                  onClick={() => navigator("/project/" + project.uniqueId)}
+                  className="view-case-button gap-4"
                 >
                   View Case
                   <svg
@@ -160,7 +163,7 @@ const Profile = () => {
             <div
               className="creation-card"
               key={creation.id}
-              onClick={() => navigator("/project/" + creation.id)}
+              onClick={() => navigator("/project/" + creation.uniqueId)}
             >
               <img
                 src={creation.image}
@@ -170,7 +173,7 @@ const Profile = () => {
               <div className="flex-btwn">
                 <h2 className="creation-title">{creation?.projectName}</h2>
                 <svg
-                  onClick={() => navigator("/project/" + creation.id)}
+                  onClick={() => navigator("/project/" + creation.uniqueId)}
                   className="cursor-pointer"
                   width="13"
                   height="12"
@@ -217,8 +220,9 @@ const Profile = () => {
               </div>
 
               {index != designProcess.length - 1 && (
-                <div className="content_arrow">
+                <div className="content_arrow ">
                   <svg
+                    className="mobile-not-show"
                     width="73"
                     height="7"
                     viewBox="0 0 73 7"
@@ -227,6 +231,20 @@ const Profile = () => {
                   >
                     <path
                       d="M72.7952 3.82374L67.7952 0.936985L67.7952 6.71049L72.7952 3.82374ZM0.590332 4.32373L3.59887 4.32373L3.59887 3.32373L0.590332 3.32373L0.590332 4.32373ZM9.61594 4.32373L15.633 4.32373L15.633 3.32373L9.61594 3.32373L9.61594 4.32373ZM21.6501 4.32373L27.6671 4.32373L27.6671 3.32373L21.6501 3.32373L21.6501 4.32373ZM33.6842 4.32373L39.7013 4.32373L39.7013 3.32373L33.6842 3.32373L33.6842 4.32373ZM45.7184 4.32373L51.7354 4.32373L51.7354 3.32373L45.7184 3.32373L45.7184 4.32373ZM57.7525 4.32374L63.7696 4.32374L63.7696 3.32374L57.7525 3.32374L57.7525 4.32374ZM72.7952 3.82374L67.7952 0.936985L67.7952 6.71049L72.7952 3.82374ZM0.590332 4.32373L3.59887 4.32373L3.59887 3.32373L0.590332 3.32373L0.590332 4.32373ZM9.61594 4.32373L15.633 4.32373L15.633 3.32373L9.61594 3.32373L9.61594 4.32373ZM21.6501 4.32373L27.6671 4.32373L27.6671 3.32373L21.6501 3.32373L21.6501 4.32373ZM33.6842 4.32373L39.7013 4.32373L39.7013 3.32373L33.6842 3.32373L33.6842 4.32373ZM45.7184 4.32373L51.7354 4.32373L51.7354 3.32373L45.7184 3.32373L45.7184 4.32373ZM57.7525 4.32374L63.7696 4.32374L63.7696 3.32374L57.7525 3.32374L57.7525 4.32374Z"
+                      fill="#AFAFAF"
+                    />
+                  </svg>
+
+                  <svg
+                    className="web-not-show"
+                    width="7"
+                    height="31"
+                    viewBox="0 0 7 31"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M3.43457 30.5375L6.32132 25.5375L0.547817 25.5375L3.43457 30.5375ZM2.93457 0.537476L2.93457 3.03748L3.93457 3.03748L3.93457 0.537476L2.93457 0.537476ZM2.93457 8.03748L2.93457 13.0375L3.93457 13.0375L3.93457 8.03748L2.93457 8.03748ZM2.93457 18.0375L2.93457 23.0375L3.93457 23.0375L3.93457 18.0375L2.93457 18.0375ZM3.43457 30.5375L6.32132 25.5375L0.547817 25.5375L3.43457 30.5375ZM2.93457 0.537476L2.93457 3.03748L3.93457 3.03748L3.93457 0.537476L2.93457 0.537476ZM2.93457 8.03748L2.93457 13.0375L3.93457 13.0375L3.93457 8.03748L2.93457 8.03748ZM2.93457 18.0375L2.93457 23.0375L3.93457 23.0375L3.93457 18.0375L2.93457 18.0375Z"
                       fill="#AFAFAF"
                     />
                   </svg>
@@ -260,11 +278,12 @@ export default Profile;
 const projects = [
   {
     id: 1,
+    uniqueId: uniqueIdForProject.oneGolde,
     title: "OneGold",
     category: "Trading",
     description:
       "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy.",
-    image: asset.awetome.projectimage,
+    image: asset.oneGolde.liveProjectImage,
     link: "#",
     class: "badge-category-type1",
     CardClass: "project-card-type1",
@@ -272,75 +291,80 @@ const projects = [
   {
     id: 2,
     title: "APMEX",
+    uniqueId: uniqueIdForProject.apmex,
     category: "E-Commerce",
     description:
       "A precious metal E-commerce platform with built-in dynamic price optimisation, improved funnel conversions, and higher customer retention.",
-    image: asset.awetome.projectimage,
+    image: asset.apmex.liveProjectImage,
     link: "#",
     class: "badge-category-type2",
     CardClass: "project-card-type2",
   },
   {
     id: 3,
-    title: "OneGold",
-    category: "Trading",
+    title: "Surgtest",
+    uniqueId: uniqueIdForProject.surgtest,
+    category: "E-Learning",
     description:
-      "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy.",
-    image: asset.awetome.projectimage,
+      "An Ed-tech learning platform for super speciality medical programs with comprehensive progress tracking, in-app live sessions and adaptive testing.",
+    image: asset.surgtest.liveProjectImage,
     link: "#",
     CardClass: "project-card-type3",
     class: "badge-category-type3",
   },
   {
     id: 4,
-    title: "APMEX",
-    category: "E-Commerce",
+    title: "YOLO Works",
+    uniqueId: uniqueIdForProject.yoloWorks,
+    category: "E-Learning",
     description:
-      "A precious metal E-commerce platform with built-in dynamic price optimisation, improved funnel conversions, and higher customer retention.",
-    image: asset.awetome.projectimage,
+      "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy",
+    image: asset.yoloWorks.liveProjectImage,
     link: "#",
     class: "badge-category-type3",
     CardClass: "project-card-type4",
   },
   {
     id: 5,
-    title: "OneGold",
-    category: "Trading",
+    title: "Vittae",
+    uniqueId: uniqueIdForProject.vittae,
+    category: "E-Learning",
     description:
-      "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy.",
-    image: asset.awetome.projectimage,
+      "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy",
+    image: asset.vitte.liveProjectImage,
     link: "#",
     CardClass: "project-card-type3",
-    class: "badge-category-type3",
+    class: "badge-category-type5",
   },
   {
     id: 6,
-    title: "APMEX",
-    category: "E-Commerce",
+    title: "LMES",
+    uniqueId: uniqueIdForProject.limes,
+    category: "E-Learning",
     description:
-      "A precious metal E-commerce platform with built-in dynamic price optimisation, improved funnel conversions, and higher customer retention.",
-    image: asset.awetome.projectimage,
+      "An Ed-tech learning platform for super speciality medical programs with comprehensive progress tracking, in-app live sessions and adaptive testing.",
+    image: asset.limes.liveProjectImage,
     link: "#",
     class: "badge-category-type3",
-    CardClass: "project-card-type4",
+    CardClass: "project-card-type6",
   },
 ];
 
 const items = [
-  "Web Design",
-  "Mobile Application",
-  "Wire Framing",
+  "User Research",
+  "Visual Design",
   "Prototyping",
-  "Web Design",
-  "Mobile Application",
+  "Brand Strategy",
+  "Interaction Design",
   "Wire Framing",
-  "Prototyping",
+  "Design and Printing",
 ];
 
 const creations = [
   {
     id: 1,
     image: asset.awetome.projectimage,
+    uniqueId: uniqueIdForProject.awetome,
     alt: "Creation 1",
     projectName: "Awetome",
     platforms: [
@@ -362,6 +386,7 @@ const creations = [
     id: 2,
     image: asset.vee2care.projectimage,
     alt: "Creation 2",
+    uniqueId: uniqueIdForProject.vee2Care,
     projectName: "Vee 2 Care",
     platforms: [
       {
@@ -379,6 +404,7 @@ const creations = [
     id: 3,
     image: asset.erpOne.projectimage,
     alt: "Creation 3",
+    uniqueId: uniqueIdForProject.erpOne,
     projectName: "ERP One",
     platforms: [
       {
@@ -395,6 +421,7 @@ const creations = [
     id: 4,
     image: asset.tnulm.projectimage,
     alt: "Creation 4",
+    uniqueId: uniqueIdForProject.tnulm,
     projectName: "TNULM",
     platforms: [
       {
@@ -416,6 +443,7 @@ const creations = [
     image: asset.hevanly.projectimage,
     alt: "Creation 5",
     projectName: "Heavenly",
+    uniqueId: uniqueIdForProject.hevanly,
     platforms: [
       {
         content: "Mobile App",
@@ -435,6 +463,7 @@ const creations = [
     id: 6,
     image: asset.getDiety.projectimage,
     alt: "Creation 6",
+    uniqueId: uniqueIdForProject.getDiety,
     projectName: "Get Diety",
     platforms: [
       {
@@ -455,6 +484,7 @@ const creations = [
     id: 7,
     image: asset.bioDime.projectimage,
     alt: "Creation 7",
+    uniqueId: uniqueIdForProject.bioDime,
     projectName: "Bio Dime",
     platforms: [
       {

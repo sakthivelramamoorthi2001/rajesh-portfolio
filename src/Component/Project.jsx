@@ -2,17 +2,21 @@ import PlayStroe from "../assets/playStore.svg";
 import AppStore from "../assets/appStore.svg";
 import "../css/Project.css";
 import { useNavigate, useParams } from "react-router-dom";
-import { projectInfo } from "../Const";
+import { projectInfo, uniqueIdForProject } from "../Const";
 import asset from "../assets";
 
 const Project = () => {
   const navigate = useNavigate();
   let { id = 1 } = useParams();
   id = Number(id);
-  let got = projectInfo.find((i) => i.id == id);
+  const paginationLength = Object.values(uniqueIdForProject).map(i => i).sort((a, b) => a - b);
+
+  console.log(paginationLength,'paginationLength');
+  
+  let got = projectInfo.find((i) => i.uniqueId == id);
   const selectedProject = got ? got : projectInfo[0];
-  const prevButtonDisable = id > 1;
-  const nextButtonDiable = id < projectInfo.length;
+  const prevButtonDisable = id != paginationLength[0];
+  const nextButtonDiable = id != paginationLength[paginationLength.length -1];
 
   const paginationPrev = () => {
     if (prevButtonDisable) {

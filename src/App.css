@@ -1,7 +1,6 @@
 body {
-  font-family: 'Gilroy-Bold', sans-serif;
+  font-family: "Gilroy-Bold", sans-serif;
 }
-
 
 .flex {
   display: flex;
@@ -29,7 +28,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-} 
+}
 
 .flex-column {
   display: flex;
@@ -49,8 +48,6 @@ body {
   flex-wrap: wrap;
 }
 
-
-
 .flex-no-wrap {
   flex-wrap: wrap;
 }
@@ -62,7 +59,6 @@ body {
   flex-wrap: wrap;
 }
 
-
 .flex-wrap-even {
   display: flex;
   justify-content: space-evenly;
@@ -70,8 +66,35 @@ body {
   flex-wrap: wrap;
 }
 
-
-
 .gap-4 {
   gap: 4px;
 }
+
+.w-100 {
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  
+  .web-not-show {
+    display: none !important;
+
+  }
+}
+
+@media screen and (max-width: 500px) {
+ 
+  .mobile-not-show {
+    display: none !important;
+  }
+}
+
+.tab-show {
+  display: block;
+}
+
+.tab-not-show {
+  display: none;
+}
+
+

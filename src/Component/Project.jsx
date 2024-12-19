@@ -86,7 +86,7 @@ const Project = () => {
       </div>
 
       <div className="project_title_img">
-        <img src={asset.awetome.projectimage} alt="" />
+        <img src={selectedProject.imageOfMainTop} alt="" />
       </div>
 
       <div className="project_description_main ">
@@ -122,7 +122,7 @@ const Project = () => {
           </div>
         </div>
         <div className="image_of_project">
-          <img src={asset.awetome.projectimage} alt="" />
+          <img src={selectedProject.imageOfProject} alt="" />
         </div>
       </div>
 

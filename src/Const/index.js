@@ -23,6 +23,7 @@ export const projectInfo = [
     uniqueId: uniqueIdForProject.oneGolde,
     name: "OneGold",
     imageOfProject: asset.oneGolde.projectMainImage,
+    imageOfMainTop:asset.oneGolde.projectTopMainImage,
     overView: [
       {
         title: "PlateForm",
@@ -81,6 +82,7 @@ export const projectInfo = [
     uniqueId: uniqueIdForProject.apmex,
     name: "APMEX",
     imageOfProject: asset.apmex.projectMainImage,
+    imageOfMainTop:asset.apmex.projectTopMainImage,
     overView: [
       {
         title: "PlateForm",
@@ -137,6 +139,7 @@ export const projectInfo = [
     id: 3,
     uniqueId: uniqueIdForProject.surgtest,
     name: "SurgTest",
+    imageOfMainTop:asset.surgtest.projectTopMainImage,
     imageOfProject: asset.surgtest.projectMainImage,
     overView: [
       {
@@ -193,6 +196,7 @@ export const projectInfo = [
   {
     id: 4,
     name: "Vittae",
+    imageOfMainTop:asset.vitte.projectTopMainImage,
     imageOfProject: asset.vitte.projectMainImage,
     uniqueId: uniqueIdForProject.vittae,
     overView: [
@@ -251,6 +255,7 @@ export const projectInfo = [
     id: 5,
     name: "TNULM",
     imageOfProject: asset.tnulm.projectMainImage,
+    imageOfMainTop:asset.tnulm.projectTopMainImage,
     uniqueId: uniqueIdForProject.tnulm,
     overView: [
       {
@@ -314,6 +319,7 @@ export const projectInfo = [
   {
     id: 6,
     name: "LMES",
+    imageOfMainTop:asset.limes.projectTopMainImage,
     imageOfProject: asset.limes.projectMainImage,
     uniqueId: uniqueIdForProject.limes,
     overView: [

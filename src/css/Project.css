@@ -66,12 +66,13 @@
 
 .project_title_img {
   width: 100%;
+  background-color: black;
   margin: 60px 0px 0px 0px;
 }
 .project_title_img img {
   height: 580px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project_description {

@@ -163,7 +163,7 @@ const Profile = () => {
             <div
               className="creation-card"
               key={creation.id}
-              onClick={() => navigator("/project/" + creation.uniqueId)}
+              // onClick={() => navigator("/project/" + creation.uniqueId)}
             >
               <img
                 src={creation.image}

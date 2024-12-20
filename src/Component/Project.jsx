@@ -9,10 +9,7 @@ const Project = () => {
   const navigate = useNavigate();
   let { id = 1 } = useParams();
   id = Number(id);
-  const paginationLength = Object.values(uniqueIdForProject).map(i => i).sort((a, b) => a - b);
-
-  console.log(paginationLength,'paginationLength');
-  
+  const paginationLength = [uniqueIdForProject.oneGolde,uniqueIdForProject.apmex,uniqueIdForProject.surgtest,uniqueIdForProject.yoloWorks,uniqueIdForProject.vittae].sort((a, b) => a - b)  
   let got = projectInfo.find((i) => i.uniqueId == id);
   const selectedProject = got ? got : projectInfo[0];
   const prevButtonDisable = id != paginationLength[0];

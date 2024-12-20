@@ -42,6 +42,7 @@
   background-color: #4864ec;
   color: white;
   font-size: 16px;
+  font-family: "Gilroy-Regular", sans-serif;
   font-weight: 400;
   border-radius: 78px;
 }
@@ -183,6 +184,28 @@
 .live-projects .project-card:hover {
   background-color: #3d3d3d;
   background: #3d3d3d;
+  transition: 1s;
+}
+
+.live-projects .project-card:hover .vide-case-project-icon {
+  transform: rotate(-60deg);
+  margin-left: 2px;
+  transition: 1s;
+}
+
+.live-projects .project-card:hover .project-video {
+  position: relative;
+}
+
+.live-projects .project-card:hover .project-video::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(61, 61, 61, 0.7);
+  z-index: 2;
 }
 
 .live-projects .project-card:hover .badge-live {
@@ -200,25 +223,25 @@
 }
 
 .live-projects .project-card-type2 {
-  background: linear-gradient(to top, #24A186, #134762);
+  background: linear-gradient(to top, #24a186, #134762);
 }
 
 .live-projects .project-card-type3 {
-  background: linear-gradient(to top, #5B77EB, #311A64);
+  background: linear-gradient(to top, #5b77eb, #311a64);
 }
 
 .live-projects .project-card-type4 {
   background: linear-gradient(to top, #505564, #000000);
 }
 .live-projects .project-card-type5 {
-  background: linear-gradient(to top, #A9283C, #353D71);
+  background: linear-gradient(to top, #a9283c, #353d71);
 }
 
 .live-projects .project-card-type6 {
-  background: linear-gradient(to top, #FBBC04, #C1930C);
+  background: linear-gradient(to top, #fbbc04, #c1930c);
 }
 
-.live-projects .project-image-container img {
+.live-projects .project-image-container .project-video {
   height: 320px;
   width: 100%;
   object-fit: cover;
@@ -332,6 +355,27 @@
   font-family: "Gilroy-Medium", sans-serif;
   text-align: left;
   margin: 12px 0px;
+}
+
+.more-creations-section .creation-card:hover {
+  background-color: #dddddd;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+.more-creations-section .creation-card:hover .creation-svg-icon {
+  transition: 0.5s;
+  background-color: white;
+  padding: 12px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more-creations-section .creation-card:hover .app-icon {
+  background-color: #dddddd;
+  transition: 0.5s;
 }
 .more-creations-section .creation-card .creation-image {
   width: 100%;
@@ -471,9 +515,37 @@
     align-items: center;
   }
 
+  .project-icon-image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .project-icon-image {
+    width: 100%;
+  }
+
+  .project_and_client ul {
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    flex-wrap: wrap;
+    padding: 0 !important;
+  }
+
+  .project_and_client_title {
+    font-size: 14px;
+  }
+
+  .project_and_client li {
+    list-style: none;
+    width: 45px;
+    margin: 8px 16px;
+  }
+
   .live-projects .project-card {
     width: calc(108% - 40px);
     margin: 0px;
+    border-radius: 20px;
   }
 
   .live-projects .project-cards {
@@ -500,19 +572,62 @@
     font-size: 32px;
   }
 
+  .more-creations-section .creation-card {
+    border: none;
+    padding: 0px;
+    border-radius: 0px;
+    min-height: fit-content;
+    margin: 0px;
+    width: 45%;
+    margin-bottom: 24px;
+  }
+
+  .more-creations-section .creations-grid {
+    justify-content: space-evenly !important;
+  }
+
+  .more-creations-section .app-icon {
+    border: 0.66px solid black;
+    border-radius: 100px;
+    padding: 3px 2px;
+    font-family: "Gilroy-Regular", sans-serif;
+    font-weight: 400;
+    font-size: 7px;
+    min-width: fit-content;
+    gap: 0px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+  }
+
+  .more-creations-section .app-icon img {
+    width: 6px !important;
+    margin-right: 1px;
+  }
+
+  .more-creations-section .app-icon span {
+    font-size: 7px;
+  }
+
+  .preview-image {
+    width: 75%;
+  }
+
   .portfolio-header,
   .live-projects,
   .more-creations-section {
-    padding: 0px 5%;
+    padding: 0px 2%;
   }
 
   .live-projects {
+    background-color: #edf4ff;
     padding: 0px 5%;
   }
 
-  .live-projects .project-image-container img {
+  .live-projects .project-image-container .project-video {
     height: 250px;
     object-fit: cover;
+    border-radius: 20px 20px 0px 0px;
   }
 }
 .design-process .step img {
@@ -575,4 +690,60 @@
 
 .about .contact_info a:hover {
   color: #0b6af0;
+}
+
+.fullScreenImagePopup {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-image {
+  position: relative;
+}
+
+.close-icon {
+  position: absolute;
+  right: 0;
+  top: -32px;
+  width: 32px;
+  height: 32px;
+  z-index: 3;
+}
+
+.preview {
+  position: relative;
+}
+
+.container {
+  width: 100%; /* Full width of the screen */
+  height: 50px; /* You can adjust the height */
+  overflow: hidden; /* Hide the overflowed text */
+  position: relative; /* To ensure positioning of the moving text */
+  background-color: #f0f0f0; /* Optional background color */
+}
+
+.moving-text {
+  display: inline-block;
+  white-space: nowrap; /* Prevent text from wrapping */
+  animation: move 10s linear forwards; /* Animation that moves the text */
+}
+
+.word {
+  display: inline-block;
+  margin-right: 10px; /* Adjust spacing between words (reduce space) */
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0); /* Start from the left of the container */
+  }
+  100% {
+    transform: translateX(-100%); /* Move completely out of view (left) */
+  }
 }

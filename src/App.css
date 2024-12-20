@@ -74,6 +74,10 @@ body {
   width: 100%;
 }
 
+.mb-24 {
+  margin-bottom: 24px;
+ }
+
 @media screen and (min-width: 1024px) {
   
   .web-not-show {
@@ -98,3 +102,8 @@ body {
 }
 
 
+
+
+i {
+  cursor: pointer;
+}

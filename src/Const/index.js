@@ -382,4 +382,71 @@ export const projectInfo = [
     description:
       "Tamil Nadu Urban Livelihoods Mission (TNULM) is a mission that intends to reduce poverty and vulnerability of the urban poor households by building strong community-based organizations and enabling them to access gainful self-employment and skilled wage employment opportunities .",
   },
+
+  {
+    id: 7,
+    name: "YOLo dummy",
+    imageOfMainTop:asset.limes.projectTopMainImage,
+    imageOfProject: asset.limes.projectMainImage,
+    uniqueId: uniqueIdForProject.yoloWorks,
+    overView: [
+      {
+        title: "PlateForm",
+        dot: false,
+        content: ["E-Learning", "Career Develpment"],
+      },
+      {
+        title: "Targeted User",
+        dot: false,
+        content: ["Sampledfh;lksadjfasldkfjaskldfjalskdf"],
+      },
+      {
+        title: "My Roles",
+        dot: true,
+        content: [
+          "Research",
+          "Conceptualisation",
+          "Design",
+          "Usability testing",
+          "Dev handoff",
+        ],
+      },
+      {
+        title: "Deliverables",
+        dot: true,
+        content: [
+          "Component Library",
+          "High Fidelity Designs",
+          "Usability Testing",
+        ],
+      },
+    ],
+    platforms: [
+      {
+        content: "Web Design",
+        img: MobileIcon,
+      },
+      {
+        content: "Web Admin",
+        img: MobileIcon,
+      },
+    ],
+    solution: [
+      {
+        title: "The Challenges :",
+        content:
+          "Qitt, a pioneering Q&A platform developed by Algomerchant Pvt Ltd, aimed to revolutionize how users share knowledge and earn from their expertise. Despite its innovative concept, Qitt faced the challenge of standing out in a saturated market dominated by traditional platforms. The core issues included difficulty in finding verified information, a lack of trust in anonymous contributions, and a user experience marred by distracting ads and poor design.",
+      },
+      {
+        title: "The Solutions :",
+        content:
+          "Embarking on a user-centered design thinking process, we conducted extensive research to understand the user’s needs deeply. Through interviews and ideation, we pinpointed key user pain points and desires. Our solutions centered on providing verified professional insights, designing a distraction-free user interface, and implementing expertise tagging to ensure high-quality responses. A focus on a clean design and strategic feature implementation, such as customization options and a streamlined navigation, helped Qitt to distinguish itself as a premium, user-focused platform.",
+      },
+    ],
+    learnings: [
+      "Working on a government project like TNULM presented unique hurdles, including deciphering unstructured data and addressing tight communication constraints. Despite these challenges, I crafted a digital solution that redefined the standard for government websites, introducing a polished, premium aesthetic. The highlight was designing a powerful admin panel that streamlined vast datasets into an easily navigable format. This project pushed me to innovate under pressure and gave me a new perspective on how design can be integrated to showcase any data to user friendly designs.",
+    ],
+    description:
+      "Tamil Nadu Urban Livelihoods Mission (TNULM) is a mission that intends to reduce poverty and vulnerability of the urban poor households by building strong community-based organizations and enabling them to access gainful self-employment and skilled wage employment opportunities .",
+  },
 ];

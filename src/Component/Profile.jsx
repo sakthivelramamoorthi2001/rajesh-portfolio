@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/profile.css";
 import profileImage from "../assets/profile.png";
 import ViewResume from "../assets/viewResume.svg";
@@ -6,45 +6,89 @@ import about from "../assets/about.png";
 import { useNavigate } from "react-router-dom";
 import MobileIcon from "../assets/mobile-app-icon.svg";
 import asset from "../assets";
-
+import video from "../assets/vitte/projectVideo.mp4";
 import { useEffect, useRef } from "react";
 import { uniqueIdForProject } from "../Const";
 
 const ScrollingAnimation = () => {
   // Duplicate items multiple times to cover more than 2x the screen width
-  const repeatedItems = [...items, ...items];
+  // const repeatedItems = [...items, ...items];
 
   return (
     <div className="scroll-container">
       {/* <div className="scroll-content">
-        {repeatedItems.map((item, index) => (
-          <div key={index} className="flex content">
-            <svg
-              width="21"
-              height="22"
-              viewBox="0 0 21 22"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10.5741 0.925781L11.9555 7.70451L17.371 3.39965L14.0719 9.4804L20.9875 9.66371L14.5517 12.2012L19.7315 16.7869L13.1703 14.5939L14.1907 21.4363L10.5741 15.5388L6.95754 21.4363L7.97791 14.5939L1.41666 16.7869L6.59651 12.2012L0.160645 9.66371L7.07627 9.4804L3.7772 3.39965L9.1927 7.70451L10.5741 0.925781Z"
-                fill="#4864EC"
-              />
-            </svg>
-            <span>{item}</span>
-          </div>
-        ))}
+       
       </div> */}
     </div>
   );
 };
 
+const itemsa = [
+  "User Research",
+  "Visual Design",
+  "Prototyping",
+  "Brand Strategy",
+  "Interaction Design",
+  "Wire Framing",
+  "Design and Printing",
+  "User Research",
+  "Visual Design",
+  "Prototyping",
+  "Brand Strategy",
+  "Interaction Design",
+  "Wire Framing",
+  "Design and Printing",
+];
+
+const MovingWords = () => {
+
+  return (
+    <div className="container">
+      <div className="moving-text">
+        {itemsa.concat(itemsa).map((word, index) => (
+          <span key={index} className="word">
+            {word}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+
+
+
+
 const Profile = () => {
   const navigator = useNavigate();
+  const [selectedImage, setSelectedImage] = useState("");
   return (
-    <div className="portfolio-container ">
+    <div className={`portfolio-container  ${selectedImage && "preview"}`}>
+      {selectedImage && (
+        <div className="fullScreenImagePopup">
+          <div className="preview-image">
+            <i className="close-icon" 
+            onClick={() => setSelectedImage('')}>
+              <svg
+                width="33"
+                height="32"
+                viewBox="0 0 33 32"
+                fill="white"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.5 14.1146L23.1 7.51465L24.9853 9.39998L18.3853 16L24.9853 22.6L23.1 24.4853L16.5 17.8853L9.89998 24.4853L8.01465 22.6L14.6146 16L8.01465 9.39998L9.89998 7.51465L16.5 14.1146Z"
+                  fill="white"
+                />
+              </svg>
+            </i>
+
+            <img src={selectedImage} alt="" className="preview-image" />
+          </div>{" "}
+        </div>
+      )}
       <header className="portfolio-header">
-        <section className="portfolio-header-content mobile-not-show">
+        <section className="portfolio-header-content mobile-not-show web-not-show">
           <h1 className="portfolio-name">
             Rajeshkanna <span>Jayabalan</span>
           </h1>
@@ -76,14 +120,28 @@ const Profile = () => {
             partnerships, and thriving in complex, dynamic environments.
           </p>
 
-          <div className="web-not-show  mobile-show flex">
-            <button className="view-resume-button flex ">
+          <div className=" mobile-show flex">
+            <button className="view-resume-button flex mb-24">
               <span>View Resume </span>
               <img src={ViewResume} />
             </button>
           </div>
         </section>
       </header>
+
+      <div className="project_and_client ">
+        <h2 className="project_and_client_title">
+          Top clients I've worked with
+        </h2>
+
+        <ul className="flex">
+          {clientAndProjectIcon.map((i) => (
+            <li className="project-icon-image">
+              <img src={i} />
+            </li>
+          ))}
+        </ul>
+      </div>
 
       {/* Skills Section */}
       {/* <section className="skills-section scroll-container"> */}
@@ -103,6 +161,7 @@ const Profile = () => {
           ))}
         </ul> */}
 
+
       {/* </section> */}
 
       {/* Live Projects Section */}
@@ -116,12 +175,13 @@ const Profile = () => {
               onClick={() => navigator("/project/" + project.uniqueId)}
             >
               <div className="project-image-container">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-image"
+                <video
+                  autoPlay={true}
+                  playsInline={true}
+                  loop={true}
+                  className="project-video"
+                  src={video}
                 />
-                {/* <video  className="project-image" src="https://static.vecteezy.com/system/resources/previews/052/602/772/mp4/social-media-marketing-3d-animated-concept-video.mp4"></video> */}
                 <div className={"project-badges"}>
                   <button className="badge-live">Live</button>
                   <button className={project.class + " " + "badge-category"}>
@@ -137,7 +197,8 @@ const Profile = () => {
                   className="view-case-button gap-4"
                 >
                   View Case
-                  <svg
+               <i  className="vide-case-project-icon">
+               <svg
                     width="16"
                     height="15"
                     viewBox="0 0 16 15"
@@ -149,6 +210,7 @@ const Profile = () => {
                       fill="#282B37"
                     />
                   </svg>
+               </i>
                 </button>
               </div>
             </div>
@@ -163,6 +225,7 @@ const Profile = () => {
             <div
               className="creation-card"
               key={creation.id}
+              onClick={() => setSelectedImage(creation.image)}
               // onClick={() => navigator("/project/" + creation.uniqueId)}
             >
               <img
@@ -172,8 +235,9 @@ const Profile = () => {
               />
               <div className="flex-btwn">
                 <h2 className="creation-title">{creation?.projectName}</h2>
-                <svg
-                  onClick={() => navigator("/project/" + creation.uniqueId)}
+             <i className="creation-svg-icon">
+             <svg
+                  // onClick={() => navigator("/project/" + creation.uniqueId)}
                   className="cursor-pointer"
                   width="13"
                   height="12"
@@ -186,6 +250,7 @@ const Profile = () => {
                     fill="#282B37"
                   />
                 </svg>
+             </i>
               </div>
               <div className="app-icons flex-start-start flex-wrap">
                 {creation.platforms?.map((i) => (
@@ -310,7 +375,7 @@ const projects = [
     image: asset.surgtest.liveProjectImage,
     link: "#",
     CardClass: "project-card-type3",
-    class: "badge-category-type3",
+    CardClass: "project-card-type4",
   },
   {
     id: 4,
@@ -322,7 +387,7 @@ const projects = [
     image: asset.yoloWorks.liveProjectImage,
     link: "#",
     class: "badge-category-type3",
-    CardClass: "project-card-type4",
+    CardClass: "project-card-type3",
   },
   {
     id: 5,
@@ -333,21 +398,21 @@ const projects = [
       "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy",
     image: asset.vitte.liveProjectImage,
     link: "#",
-    CardClass: "project-card-type3",
+    CardClass: "project-card-type5",
     class: "badge-category-type5",
   },
-  {
-    id: 6,
-    title: "LMES",
-    uniqueId: uniqueIdForProject.limes,
-    category: "E-Learning",
-    description:
-      "An Ed-tech learning platform for super speciality medical programs with comprehensive progress tracking, in-app live sessions and adaptive testing.",
-    image: asset.limes.liveProjectImage,
-    link: "#",
-    class: "badge-category-type3",
-    CardClass: "project-card-type6",
-  },
+  // {
+  //   id: 6,
+  //   title: "LMES",
+  //   uniqueId: uniqueIdForProject.limes,
+  //   category: "E-Learning",
+  //   description:
+  //     "An Ed-tech learning platform for super speciality medical programs with comprehensive progress tracking, in-app live sessions and adaptive testing.",
+  //   image: asset.limes.liveProjectImage,
+  //   link: "#",
+  //   class: "badge-category-type3",
+  //   CardClass: "project-card-type6",
+  // },
 ];
 
 const items = [
@@ -395,6 +460,27 @@ const creations = [
       },
       {
         content: "Web Design",
+        img: MobileIcon,
+      },
+    ],
+  },
+  {
+    id: 7,
+    image: asset.limes.projectimage,
+    alt: "Creation 7",
+    uniqueId: uniqueIdForProject.limes,
+    projectName: "LMES",
+    platforms: [
+      {
+        content: "Mobile App",
+        img: MobileIcon,
+      },
+      {
+        content: "Web Design",
+        img: MobileIcon,
+      },
+      {
+        content: "Mobile App",
         img: MobileIcon,
       },
     ],
@@ -525,4 +611,15 @@ const designProcess = [
     title: "Dev Hand off",
     description: "Qitt, a pioneering Q&A platform developed by Algomerchant",
   },
+];
+
+const clientAndProjectIcon = [
+  asset.oneGolde.iconOfProject,
+  asset.apmex.iconOfProject,
+  asset.limes.iconOfProject,
+  asset.surgtest.iconOfProject,
+  asset.apmex.iconOfProject,
+  asset.limes.iconOfProject,
+  asset.surgtest.iconOfProject,
+  asset.surgtest.iconOfProject,
 ];

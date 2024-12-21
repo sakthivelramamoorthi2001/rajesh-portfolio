@@ -27,6 +27,8 @@ import OneGoldprojectMainImage from "./onegold/projectMainImage.png";
 import ApmexprojectMainImage from "./apmex/projectMainImage.png";
 import SurgtestprojectMainImage from "./surgtest/projectMainImage.png";
 import LimesprojectMainImage from "./limes/projectMainImage.png";
+import VitteprojectMainImage from "./vitte/projectMainImage.png";
+
 
 //top main image
 import oneGoldMainTopImage from "./onegold/topMain.png";
@@ -123,7 +125,7 @@ const asset = {
   vitte: {
     liveProjectImage: dummyImagg,
     projectTopMainImage: vitteMainTopImage,
-    projectMainImage: dummyImagg,
+    projectMainImage: VitteprojectMainImage,
     iconOfProject: dummyImagg,
   },
 };

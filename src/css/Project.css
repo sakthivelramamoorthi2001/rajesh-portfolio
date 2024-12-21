@@ -83,19 +83,19 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  padding: 40px 15%;
 }
 
 .project_description_main {
   background-color: #f6faff;
   border-radius: 0px 0px 100px 100px;
-  padding: 40px 15%;
 }
 
 .image_of_project img {
   height: 816px;
   width: 100%;
   margin: 60px 0px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project_description .overview .overview_title {
@@ -180,10 +180,11 @@
   font-size: 20px;
   font-weight: 400;
   font-family: "Gilroy-Medium", sans-serif;
+  padding: 10px 20px;
 }
 
 .image_of_project {
-  width: 100%;
+  padding: 0px 7%;
 }
 
 .pagination_allow {
@@ -260,6 +261,20 @@
 
   .project_description_main {
     padding: 0px 5%;
+    background-color: white;
+  }
+
+  .image_of_project {
+    padding: 0;
+  }
+
+  .learning .learning_title {
+    font-size: 20px;
+  }
+
+  .learning_description , .solution_description {
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .project_description {
@@ -292,13 +307,14 @@
   .pagination button {
     font-size: 12px;
     margin: 20px 0px;
+    padding: 2px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .project_description .overview_subtitle {
-    margin:8px 0px;
-  }
 
-  .pagination_allow svg {
+  .pagination svg {
     width: 16px;
     height: 16px;
   } 
@@ -309,11 +325,25 @@
 
   .solution {
     text-align: left;
+  }
 
+  .overview_subtitle {
+    font-size: 16px !important;
+    margin: 16px 0px;
+  }
+
+  .subtitle_content {
+    margin: 8px 0px;
+    font-family: "Gilroy-SemiBold", sans-serif;
   }
 
   .project_title_img img {
     height: 400px;
     object-fit: cover;
+  }
+
+  .project_description .overview .overview_title {
+    font-size: 20px;
+    margin-top: 32px;
   }
 }

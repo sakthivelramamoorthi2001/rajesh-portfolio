@@ -5,6 +5,10 @@
   color: #333;
 }
 
+
+.portfolio-container-hide {
+  opacity: 0;
+}
 .portfolio-header {
   padding: 0px 250px;
   display: flex;
@@ -655,6 +659,10 @@
     width: 12px;
     height: 12px;
     margin-right: 4px;
+  }
+
+  .about .contact_info a {
+    margin-bottom: 12px;
   }
 }
 .design-process .step img {

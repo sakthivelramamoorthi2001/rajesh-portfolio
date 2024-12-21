@@ -28,109 +28,105 @@ import ApmexprojectMainImage from "./apmex/projectMainImage.png";
 import SurgtestprojectMainImage from "./surgtest/projectMainImage.png";
 import LimesprojectMainImage from "./limes/projectMainImage.png";
 
+//top main image
+import oneGoldMainTopImage from "./onegold/topMain.png";
+import apmexMainTopImage from "./apmex/topMain.png";
+import surgtestMainTopImage from "./surgtest/topMain.png";
+import vitteMainTopImage from "./vitte/topMain.png";
 
-//top main image 
-import oneGoldMainTopImage from './onegold/topMain.png';
-import apmexMainTopImage from './apmex/topMain.png';
-import surgtestMainTopImage from './surgtest/topMain.png';
-import vitteMainTopImage from './vitte/topMain.png';
-
-
-//icon 
-import iconOneGold from './onegold/ProjectIcon.png';
-import iconOneApmex from './apmex/ProjectIcon.png';
-import iconOneLimes from './limes/ProjectIcon.png'
-import iconSurgtes from './surgtest/ProjectIcon.png';
-import iconTnulm from './tnulm/ProjectIcon.png';
+//icon
+import iconOneGold from "./onegold/ProjectIcon.png";
+import iconOneApmex from "./apmex/ProjectIcon.png";
+import iconOneLimes from "./limes/ProjectIcon.png";
+import iconSurgtes from "./surgtest/ProjectIcon.png";
+import iconTnulm from "./tnulm/ProjectIcon.png";
 // import iconVitte from './vitte/ProjectIcon.png';
-import iconHdfc from './hdfc/ProjectIcon.png';
+import iconHdfc from "./hdfc/ProjectIcon.png";
 // import iconNews from './hdfc'
 
-
 import dummyImagg from "./dummyImage.png";
+
 const asset = {
   awetome: {
     projectimage: awetomeProjectImage,
-    projectTopMainImage:dummyImagg,
+    projectTopMainImage: dummyImagg,
     projectMainImage: awetomeprojectMainImage,
-    iconOfProject:dummyImagg,
-
+    iconOfProject: dummyImagg,
   },
   erpOne: {
     projectimage: ErpProjectImage,
-    projectTopMainImage:dummyImagg,
+    projectTopMainImage: dummyImagg,
     projectMainImage: ErpprojectMainImage,
-    iconOfProject:dummyImagg,
-
+    iconOfProject: dummyImagg,
   },
   getDiety: {
     projectimage: getDietyProjectImage,
-    projectTopMainImage:dummyImagg,
+    projectTopMainImage: dummyImagg,
     projectMainImage: getDietyprojectMainImage,
-    iconOfProject:dummyImagg,
+    iconOfProject: dummyImagg,
   },
   vee2care: {
     projectimage: vee2CareProjectImage,
-    projectTopMainImage:dummyImagg,
+    projectTopMainImage: dummyImagg,
     projectMainImage: vee2CareprojectMainImage,
-    iconOfProject:dummyImagg,
+    iconOfProject: dummyImagg,
   },
   tnulm: {
-    projectTopMainImage:dummyImagg,
+    projectTopMainImage: dummyImagg,
     projectMainImage: tnulmprojectMainImage,
     projectimage: tnulmProjectImage,
-    iconOfProject:iconTnulm,
+    iconOfProject: iconTnulm,
   },
   hevanly: {
-    projectTopMainImage:dummyImagg,
+    projectTopMainImage: dummyImagg,
     projectMainImage: hevanlyprojectMainImage,
     projectimage: hevanlyProjectImage,
-    iconOfProject:dummyImagg,
+    iconOfProject: dummyImagg,
   },
   bioDime: {
-    projectTopMainImage:dummyImagg,
+    projectTopMainImage: dummyImagg,
     projectMainImage: bioDimeprojectMainImage,
     projectimage: bioDimeProjectImage,
-    iconOfProject:dummyImagg,
+    iconOfProject: dummyImagg,
   },
   oneGolde: {
     liveProjectImage: liveProjectImageOneGold,
-    projectTopMainImage:oneGoldMainTopImage,
+    projectTopMainImage: oneGoldMainTopImage,
     projectMainImage: OneGoldprojectMainImage,
-    iconOfProject:iconOneGold,
+    iconOfProject: iconOneGold,
   },
   apmex: {
     liveProjectImage: liveProjectImageApmex,
-    projectTopMainImage:apmexMainTopImage,
+    projectTopMainImage: apmexMainTopImage,
     projectMainImage: ApmexprojectMainImage,
-    iconOfProject:iconOneApmex,
-
+    iconOfProject: iconOneApmex,
   },
   surgtest: {
     liveProjectImage: liveProjectImageSurgtest,
-    projectTopMainImage:surgtestMainTopImage,
+    projectTopMainImage: surgtestMainTopImage,
     projectMainImage: SurgtestprojectMainImage,
-    iconOfProject:iconSurgtes,
+    iconOfProject: iconSurgtes,
   },
   limes: {
     liveProjectImage: liveProjectImageLimes,
-    projectTopMainImage:dummyImagg,
+    projectTopMainImage: dummyImagg,
     projectMainImage: LimesprojectMainImage,
-    iconOfProject:iconOneLimes,
-    projectimage:limeProjectImage,
+    iconOfProject: iconOneLimes,
+    projectimage: limeProjectImage,
   },
   yoloWorks: {
     liveProjectImage: dummyImagg,
-    projectTopMainImage:dummyImagg,
+    projectTopMainImage: dummyImagg,
     projectMainImage: dummyImagg,
-    iconOfProject:dummyImagg,
+    iconOfProject: dummyImagg,
   },
   vitte: {
     liveProjectImage: dummyImagg,
-    projectTopMainImage:vitteMainTopImage,
+    projectTopMainImage: vitteMainTopImage,
     projectMainImage: dummyImagg,
-    iconOfProject:dummyImagg,
+    iconOfProject: dummyImagg,
   },
 };
+
 
 export default asset;

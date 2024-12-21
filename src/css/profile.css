@@ -44,6 +44,7 @@
   font-size: 16px;
   font-family: "Gilroy-Regular", sans-serif;
   font-weight: 400;
+  padding: 12px 20px;
   border-radius: 78px;
 }
 
@@ -183,6 +184,7 @@
 
 .live-projects .project-card:hover {
   background-color: #3d3d3d;
+  transition: background-color 1s ease-in !important;
   background: #3d3d3d;
   transition: 1s;
 }
@@ -219,25 +221,31 @@
 }
 
 .live-projects .project-card-type1 {
+  transition: background-color 1s ease-in-out !important;
   background: linear-gradient(to top, #0b6af0, #22448f);
 }
 
 .live-projects .project-card-type2 {
+  transition: background-color 1s ease-in-out !important;
   background: linear-gradient(to top, #24a186, #134762);
 }
 
 .live-projects .project-card-type3 {
+  transition: background-color 1s ease-in-out !important;
   background: linear-gradient(to top, #5b77eb, #311a64);
 }
 
 .live-projects .project-card-type4 {
+  transition: background-color 1s ease-in-out !important;
   background: linear-gradient(to top, #505564, #000000);
 }
 .live-projects .project-card-type5 {
+  transition: background-color 1s ease-in-out !important;
   background: linear-gradient(to top, #a9283c, #353d71);
 }
 
 .live-projects .project-card-type6 {
+  transition: background-color 1s ease-in-out !important;
   background: linear-gradient(to top, #fbbc04, #c1930c);
 }
 
@@ -399,6 +407,7 @@
 .more-creations-section .app-icon {
   border: 1px solid black;
   border-radius: 100px;
+  color: black;
   padding: 5px 12px;
   font-family: "Gilroy-Regular", sans-serif;
   font-weight: 400;
@@ -406,8 +415,9 @@
   gap: 2px;
 }
 
-.more-creations-section .app-icon .creation-app-icon-img {
+.more-creations-section .app-icon .creation-app-icon-img svg {
   width: 12px;
+  height: 12px;
 }
 
 .more-creations-section .app-icon span {
@@ -524,6 +534,12 @@
     width: 100%;
   }
 
+  .live-projects .live-projects-title {
+    font-size: 20px;
+    padding: 24px 0px;
+    margin: 0;
+  }
+
   .project_and_client ul {
     display: flex;
     align-items: center;
@@ -578,35 +594,40 @@
     border-radius: 0px;
     min-height: fit-content;
     margin: 0px;
-    width: 45%;
-    margin-bottom: 24px;
+    width: 48.5%;
+    margin: 0px 2px 24px 2px;
   }
 
   .more-creations-section .creations-grid {
-    justify-content: space-evenly !important;
   }
 
   .more-creations-section .app-icon {
     border: 0.66px solid black;
     border-radius: 100px;
-    padding: 3px 2px;
+    padding: 3px 8px;
     font-family: "Gilroy-Regular", sans-serif;
     font-weight: 400;
     font-size: 7px;
-    min-width: fit-content;
+    min-width: 55px;
+    color: black;
     gap: 0px;
     display: flex;
     align-items: baseline;
     justify-content: space-evenly;
   }
 
-  .more-creations-section .app-icon img {
+  .more-creations-section .app-icon svg {
     width: 6px !important;
+    height: 6px !important;
     margin-right: 1px;
   }
 
   .more-creations-section .app-icon span {
-    font-size: 7px;
+    font-size: 6px;
+  }
+
+  .more-creations-section .app-icons{
+    gap: 1px;
   }
 
   .preview-image {
@@ -628,6 +649,12 @@
     height: 250px;
     object-fit: cover;
     border-radius: 20px 20px 0px 0px;
+  }
+
+  .about .contact_info svg {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
   }
 }
 .design-process .step img {
@@ -685,7 +712,14 @@
   color: #212121;
   font-size: 18px;
   font-weight: 400;
+  text-decoration: underline;
   font-family: "Gilroy-Regular", sans-serif;
+}
+
+.about .contact_info svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
 }
 
 .about .contact_info a:hover {

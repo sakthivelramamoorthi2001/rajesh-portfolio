@@ -49,9 +49,13 @@
   border-radius: 100px;
   padding: 6px 14px;
   font-size: 16px;
+  color: black;
   font-family: "Gilroy-Regular", sans-serif;
   font-weight: 400;
   margin: 0px 3px;
+  display: flex;
+  align-items: normal;
+  justify-content: space-between;
 }
 
 .project_info .available {
@@ -210,12 +214,40 @@
   list-style: none;
 }
 
+.project_info .app-icon svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 0;
+}
+
+
 @media screen and (max-width: 1024px) {
 }
 
 @media screen and (max-width: 500px) {
   .project_info {
     padding: 0px 5%;
+  }
+  .icon_store img{
+    width: 113px;
+  }
+
+  .project_info h2 {
+    font-size: 32px;
+  }
+
+  .project_info p {
+    font-size: 14px;
+  }
+
+  .project_info .app-icon {
+    font-size: 12px;
+  }
+
+  .project_info .app-icon svg {
+    width: 12px;
+    height: 12px;
+    margin-right: 0;
   }
 
   .project_description .solution {
@@ -263,8 +295,13 @@
   }
 
   .project_description .overview_subtitle {
-    margin: 8px;
+    margin:8px 0px;
   }
+
+  .pagination_allow svg {
+    width: 16px;
+    height: 16px;
+  } 
 
   .overview  {
     text-align: left;

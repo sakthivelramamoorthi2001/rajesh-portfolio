@@ -1,4 +1,3 @@
-import MobileIcon from "../assets/mobile-app-icon.svg";
 import asset from "../assets";
 
 export const uniqueIdForProject = {
@@ -49,11 +48,11 @@ export const projectInfo = [
     platforms: [
       {
         content: "Mobile App",
-        img: MobileIcon,
+        img: 0
       },
       {
         content: "Web Design",
-        img: MobileIcon,
+        img: 1,
       },
     ],
     solution: [
@@ -108,11 +107,16 @@ export const projectInfo = [
     platforms: [
       {
         content: "Mobile App",
-        img: MobileIcon,
+        img: 0
+        
+        
+        
+        
+        ,
       },
       {
         content: "Web Design",
-        img: MobileIcon,
+        img: 1,
       },
     ],
     solution: [
@@ -166,11 +170,11 @@ export const projectInfo = [
     platforms: [
       {
         content: "Mobile App",
-        img: MobileIcon,
+        img: 0,
       },
       {
         content: "Web Design",
-        img: MobileIcon,
+        img: 1,
       },
     ],
     solution: [
@@ -224,11 +228,11 @@ export const projectInfo = [
     platforms: [
       {
         content: "Mobile App",
-        img: MobileIcon,
+        img: 0,
       },
       {
         content: "Web Design",
-        img: MobileIcon,
+        img: 1,
       },
     ],
     solution: [
@@ -287,15 +291,15 @@ export const projectInfo = [
     platforms: [
       {
         content: "Mobile App",
-        img: MobileIcon,
+        img: 0,
       },
       {
         content: "Web Design",
-        img: MobileIcon,
+        img: 1,
       },
       {
         content: "Web Admin",
-        img: MobileIcon,
+        img: 1,
       },
     ],
     solution: [
@@ -356,12 +360,12 @@ export const projectInfo = [
     ],
     platforms: [
       {
-        content: "Web Design",
-        img: MobileIcon,
+        content: "Mobile App",
+        img: 0,
       },
       {
         content: "Web Admin",
-        img: MobileIcon,
+        img: 1,
       },
     ],
     solution: [
@@ -423,12 +427,12 @@ export const projectInfo = [
     ],
     platforms: [
       {
-        content: "Web Design",
-        img: MobileIcon,
+        content: "Mobile App",
+        img: 0,
       },
       {
-        content: "Web Admin",
-        img: MobileIcon,
+        content: "Web Design",
+        img: 1,
       },
     ],
     solution: [

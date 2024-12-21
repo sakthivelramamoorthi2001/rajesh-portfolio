@@ -5,7 +5,6 @@
   color: #333;
 }
 
-
 .portfolio-container-hide {
   opacity: 0;
 }
@@ -45,6 +44,7 @@
 .view-resume-button {
   background-color: #4864ec;
   color: white;
+  border-color: transparent;
   font-size: 16px;
   font-family: "Gilroy-Regular", sans-serif;
   font-weight: 400;
@@ -226,22 +226,34 @@
 
 .live-projects .project-card-type1 {
   transition: background-color 1s ease-in-out !important;
-  background: linear-gradient(to top, #0b6af0, #22448f);
+  background: radial-gradient(
+    104.08% 121.19% at 93.47% 94.37%,
+    #0b6af0 0%,
+    #22448f 100%
+  );
 }
 
 .live-projects .project-card-type2 {
   transition: background-color 1s ease-in-out !important;
-  background: linear-gradient(to top, #24a186, #134762);
+  background: radial-gradient(
+    139.08% 160.88% at 95.84% 92.94%,
+    #24a186 0%,
+    #134762 100%
+  );
 }
 
 .live-projects .project-card-type3 {
   transition: background-color 1s ease-in-out !important;
-  background: linear-gradient(to top, #5b77eb, #311a64);
+  background: linear-gradient(180deg, #505564 0%, #000000 100%);
 }
 
 .live-projects .project-card-type4 {
   transition: background-color 1s ease-in-out !important;
-  background: linear-gradient(to top, #505564, #000000);
+  background: radial-gradient(
+    114.76% 207.79% at 95.76% 129.26%,
+    #5b77eb 0%,
+    #311a64 100%
+  );
 }
 .live-projects .project-card-type5 {
   transition: background-color 1s ease-in-out !important;
@@ -250,7 +262,11 @@
 
 .live-projects .project-card-type6 {
   transition: background-color 1s ease-in-out !important;
-  background: linear-gradient(to top, #fbbc04, #c1930c);
+  background: radial-gradient(
+    114.76% 207.79% at 95.76% 129.26%,
+    #a9283c 0%,
+    #353d71 100%
+  );
 }
 
 .live-projects .project-image-container .project-video {
@@ -324,21 +340,58 @@
   font-family: "Gilroy-Regular", sans-serif;
   font-weight: 400;
   font-size: 16px;
+  margin-right: 3px;
+  border: none;
 }
 
-.live-projects .badge-category-type1 {
-  background-color: #0f65e2;
+.live-projects .badge-type1 {
+  background: #258cf4;
   color: white;
 }
 
-.live-projects .badge-category-type2 {
-  background-color: #3ab6b6;
+.live-projects .badge-type2 {
+  background-color: #20897d;
   color: white;
 }
 
-.live-projects .badge-category-type3 {
-  background-color: white;
-  color: #282b37;
+.live-projects .badge-type3 {
+  background: linear-gradient(94.71deg, #258cf4 5.38%, #f425f4 94.16%);
+  color: white;
+}
+
+.live-projects .badge-type4 {
+  background: black;
+  color: white;
+}
+
+.live-projects .badge-type5 {
+  background: linear-gradient(94.71deg, #258cf4 5.38%, #f425f4 94.16%);
+  color: white;
+}
+
+.live-projects .live-type1 {
+  background-color: #4285f4;
+  color: white;
+}
+
+.live-projects .live-type2 {
+  background-color: #30cab5;
+  color: black;
+}
+
+.live-projects .live-type3 {
+  background-color: #282b37;
+  color: white;
+}
+
+.live-projects .live-type4 {
+  background: #a9283c;
+  color: white;
+}
+
+.live-projects .live-type5 {
+  background: #fe9cd0;
+  color: black;
 }
 
 .more-creations-section .creations-title {
@@ -540,8 +593,13 @@
 
   .live-projects .live-projects-title {
     font-size: 20px;
-    padding: 24px 0px;
     margin: 0;
+    margin-bottom: 24px;
+  }
+
+  .live-projects .badge-category {
+    font-size: 12px !important;
+    font-family: "Gilroy-Medium", sans-serif;
   }
 
   .project_and_client ul {
@@ -596,12 +654,58 @@
     border: none;
     padding: 0px;
     border-radius: 0px;
-    min-height: fit-content;
+    min-height: 280px;
     margin: 0px;
     width: 48.5%;
     margin: 0px 2px 24px 2px;
   }
 
+  .portfolio-greeting {
+    font-size: 16px !important;
+  }
+
+  .profile-section .portfolio-title {
+    font-size: 29px !important;
+  }
+  .non-high-lighted-name {
+    font-size: 22px !important;
+  }
+  .creation-title {
+    font-size: 16px !important;
+  }
+
+  .portfolio-description {
+    font-size: 13px !important;
+  }
+  .project_and_client_title {
+    font-size: 14px !important;
+  }
+
+  .profile-image {
+    width: 100px !important;
+    height: 100px !important;
+  }
+
+  .project-info h3 {
+    font-size: 24px !important;
+  }
+
+  .live-projects .view-case-button {
+    padding: 8px 13px;
+    font-size: 10px;
+  }
+
+  .vide-case-project-icon svg {
+    width: 9px;
+    height: 9px;
+  }
+
+  .project-info p {
+    font-size: 12px !important;
+  }
+  .creations-title {
+    font-size: 20px !important;
+  }
   .more-creations-section .creations-grid {
   }
 
@@ -630,7 +734,7 @@
     font-size: 6px;
   }
 
-  .more-creations-section .app-icons{
+  .more-creations-section .app-icons {
     gap: 1px;
   }
 
@@ -644,9 +748,13 @@
     padding: 0px 2%;
   }
 
+  .profile-section .portfolio-title {
+    line-height: 32px !important;
+  }
+
   .live-projects {
     background-color: #edf4ff;
-    padding: 0px 5%;
+    padding: 10% 2% 20% 2%;
   }
 
   .live-projects .project-image-container .project-video {

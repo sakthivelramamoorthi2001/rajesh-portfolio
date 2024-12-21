@@ -69,31 +69,35 @@ const Profile = () => {
   return (
     <>
       {selectedImage && (
-       <div className="preview">
-         <div className="fullScreenImagePopup">
-          <div className="preview-image">
-            <i className="close-icon" onClick={() => setSelectedImage("")}>
-              <svg
-                width="33"
-                height="32"
-                viewBox="0 0 33 32"
-                fill="white"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M16.5 14.1146L23.1 7.51465L24.9853 9.39998L18.3853 16L24.9853 22.6L23.1 24.4853L16.5 17.8853L9.89998 24.4853L8.01465 22.6L14.6146 16L8.01465 9.39998L9.89998 7.51465L16.5 14.1146Z"
+        <div className="preview">
+          <div className="fullScreenImagePopup">
+            <div className="preview-image">
+              <i className="close-icon" onClick={() => setSelectedImage("")}>
+                <svg
+                  width="33"
+                  height="32"
+                  viewBox="0 0 33 32"
                   fill="white"
-                />
-              </svg>
-            </i>
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M16.5 14.1146L23.1 7.51465L24.9853 9.39998L18.3853 16L24.9853 22.6L23.1 24.4853L16.5 17.8853L9.89998 24.4853L8.01465 22.6L14.6146 16L8.01465 9.39998L9.89998 7.51465L16.5 14.1146Z"
+                    fill="white"
+                  />
+                </svg>
+              </i>
 
-            <img src={selectedImage} alt="" className="preview-image" />
-          </div>{" "}
+              <img src={selectedImage} alt="" className="preview-image" />
+            </div>{" "}
+          </div>
         </div>
-       </div>
       )}
 
-      <div className={`portfolio-container  ${selectedImage && "portfolio-container-hide"}`}>
+      <div
+        className={`portfolio-container  ${
+          selectedImage && "portfolio-container-hide"
+        }`}
+      >
         <header className="portfolio-header">
           <section className="portfolio-header-content mobile-not-show web-not-show">
             <h1 className="portfolio-name">
@@ -119,14 +123,15 @@ const Profile = () => {
             <h3 className="portfolio-title">
               <span className="highlighted-name">
                 {" "}
-                I’m Rajeshkanna Jayabalan,
+                I’m <br className="mobile-show web-not-show"></br> Rajeshkanna
+                Jayabalan,
               </span>
               <br />{" "}
               <span className="non-high-lighted-name">UX & UI Designer</span>
             </h3>
             <p className="portfolio-description">
               I take pride in mentoring early-career designers, building
-              cross-functional <br />
+              cross-functional <br className="mobile-not-show web-show"></br>
               partnerships, and thriving in complex, dynamic environments.
             </p>
 
@@ -189,8 +194,14 @@ const Profile = () => {
                 <div className="project-image-container">
                   <Video url={video} className="project-video" />
                   <div className={"project-badges"}>
-                    <button className="badge-live">Live</button>
-                    <button className={project.class + " " + "badge-category"}>
+                    <button
+                      className={`${"live-" + project.class} badge-category`}
+                    >
+                     {project?.live ? project.live :"Live"}
+                    </button>
+                    <button
+                      className={`${"badge-" + project.class}  badge-category`}
+                    >
                       {project.category}
                     </button>
                   </div>
@@ -203,7 +214,7 @@ const Profile = () => {
                     className="view-case-button gap-4"
                   >
                     View Case
-                    <i className="vide-case-project-icon">
+                    <i className="vide-case-project-icon flex">
                       <svg
                         width="16"
                         height="15"
@@ -404,12 +415,12 @@ const projects = [
     id: 1,
     uniqueId: uniqueIdForProject.oneGolde,
     title: "OneGold",
-    category: "Trading",
+    category: "Online Trading",
     description:
       "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy.",
     image: asset.oneGolde.liveProjectImage,
     link: "#",
-    class: "badge-category-type1",
+    class: "type1",
     CardClass: "project-card-type1",
   },
   {
@@ -421,8 +432,21 @@ const projects = [
       "A precious metal E-commerce platform with built-in dynamic price optimisation, improved funnel conversions, and higher customer retention.",
     image: asset.apmex.liveProjectImage,
     link: "#",
-    class: "badge-category-type2",
+    class: "type2",
     CardClass: "project-card-type2",
+  },
+  {
+    id: 4,
+    title: "YOLO Works",
+    uniqueId: uniqueIdForProject.yoloWorks,
+    category: "E-Learning",
+    live: "Product",
+    description:
+      "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy",
+    image: asset.yoloWorks.liveProjectImage,
+    link: "#",
+    class: "type3",
+    CardClass: "project-card-type3",
   },
   {
     id: 3,
@@ -433,32 +457,22 @@ const projects = [
       "An Ed-tech learning platform for super speciality medical programs with comprehensive progress tracking, in-app live sessions and adaptive testing.",
     image: asset.surgtest.liveProjectImage,
     link: "#",
-    CardClass: "project-card-type3",
+    class: "type4",
+
     CardClass: "project-card-type4",
   },
-  {
-    id: 4,
-    title: "YOLO Works",
-    uniqueId: uniqueIdForProject.yoloWorks,
-    category: "E-Learning",
-    description:
-      "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy",
-    image: asset.yoloWorks.liveProjectImage,
-    link: "#",
-    class: "badge-category-type3",
-    CardClass: "project-card-type3",
-  },
+
   {
     id: 5,
     title: "Vittae",
     uniqueId: uniqueIdForProject.vittae,
-    category: "E-Learning",
+    category: "Finance",
     description:
       "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy",
     image: asset.vitte.liveProjectImage,
     link: "#",
     CardClass: "project-card-type5",
-    class: "badge-category-type5",
+    class: "type5",
   },
   // {
   //   id: 6,
@@ -469,7 +483,7 @@ const projects = [
   //     "An Ed-tech learning platform for super speciality medical programs with comprehensive progress tracking, in-app live sessions and adaptive testing.",
   //   image: asset.limes.liveProjectImage,
   //   link: "#",
-  //   class: "badge-category-type3",
+  //   class: "type3",
   //   CardClass: "project-card-type6",
   // },
 ];

@@ -1,9 +1,8 @@
 .header_of_info {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items:center;
+  justify-content:space-between;
   padding: 0 10%;
-  cursor: pointer;
   margin-top: 40px;
 }
 
@@ -48,6 +47,7 @@
   border: 1px solid black;
   border-radius: 100px;
   padding: 6px 14px;
+  background-color: transparent;
   font-size: 16px;
   color: black;
   font-family: "Gilroy-Regular", sans-serif;
@@ -239,6 +239,17 @@
 
   .project_info p {
     font-size: 14px;
+    font-family: "Gilroy-Regular", sans-serif;
+
+  }
+
+  .solution_title {
+    font-size: 18px !important;
+
+  }
+
+  .available {
+    font-size: 16px !important;
   }
 
   .project_info .app-icon {
@@ -289,8 +300,8 @@
   }
 
   .image_of_project img {
-    height: 300px;
-    object-fit: contain;
+    height: 400px;
+    object-fit: fill;
     width: 100%;
     margin: 20px 0px;
   }
@@ -305,9 +316,9 @@
   }
 
   .pagination button {
-    font-size: 12px;
+    font-size: 14px;
     margin: 20px 0px;
-    padding: 2px 12px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: center;

@@ -389,9 +389,9 @@ export const projectInfo = [
 
   {
     id: 7,
-    name: "YOLo dummy",
+    name: "Yolo works",
     imageOfMainTop:asset.limes.projectTopMainImage,
-    imageOfProject: asset.limes.projectMainImage,
+    imageOfProject: asset.limes.projectTopMainImage,
     uniqueId: uniqueIdForProject.yoloWorks,
     overView: [
       {

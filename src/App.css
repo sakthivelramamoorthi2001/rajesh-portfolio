@@ -74,6 +74,31 @@ body {
   width: 100%;
 }
 
+
+.mr-2 {
+  margin-right: 2px;
+}
+
+.mr-4 {
+  margin-right: 4px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+
+}
 .mb-24 {
   margin-bottom: 24px;
  }
@@ -105,5 +130,5 @@ body {
 
 
 i {
-  cursor: pointer;
+  cursor: pointer;;
 }

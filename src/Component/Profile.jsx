@@ -32,13 +32,6 @@ const itemsa = [
   "Interaction Design",
   "Wire Framing",
   "Design and Printing",
-  "User Research",
-  "Visual Design",
-  "Prototyping",
-  "Brand Strategy",
-  "Interaction Design",
-  "Wire Framing",
-  "Design and Printing",
 ];
 
 const videResume = () => {
@@ -51,15 +44,33 @@ const videResume = () => {
 
 const MovingWords = () => {
   return (
-    <div className="container">
-      <div className="moving-text">
-        {itemsa.concat(itemsa).map((word, index) => (
-          <span key={index} className="word">
-            {word}
-          </span>
-        ))}
-      </div>
-    </div>
+    <>
+      <section className="skills-section scroll-container">
+        <ul className="skills-list scroll-content">
+          {[...itemsa, ...itemsa, ...itemsa, ...itemsa, ...itemsa].map(
+            (item, index) => (
+              <li className="scroll-item " key={index}>
+                <i>
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 22 22"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.0922 0.716431L12.4736 7.49516L17.8891 3.1903L14.59 9.27105L21.5056 9.45436L15.0697 11.9919L20.2496 16.5776L13.6883 14.3845L14.7087 21.2269L11.0922 15.3295L7.47561 21.2269L8.49598 14.3845L1.93473 16.5776L7.11458 11.9919L0.678711 9.45436L7.59433 9.27105L4.29526 3.1903L9.71076 7.49516L11.0922 0.716431Z"
+                      fill="#4864EC"
+                    />
+                  </svg>
+                </i>
+                <span>{item}</span>
+              </li>
+            )
+          )}
+        </ul>
+      </section>
+    </>
   );
 };
 
@@ -72,8 +83,10 @@ const Profile = () => {
         <div className="preview">
           <div className="fullScreenImagePopup">
             <div className="preview-image">
-              <i className="close-icon" onClick={() => setSelectedImage("")}>
+              <section className="">
                 <svg
+                  onClick={() => setSelectedImage("")}
+                  className="close-icon"
                   width="33"
                   height="32"
                   viewBox="0 0 33 32"
@@ -85,9 +98,8 @@ const Profile = () => {
                     fill="white"
                   />
                 </svg>
-              </i>
-
-              <img src={selectedImage} alt="" className="preview-image" />
+                <img src={selectedImage} alt="" className="preview-image" />
+              </section>
             </div>{" "}
           </div>
         </div>
@@ -162,24 +174,8 @@ const Profile = () => {
         </div>
 
         {/* Skills Section */}
-        {/* <section className="skills-section scroll-container"> */}
-        {/* <ul className="skills-list scroll-content">
-          {items.map((item, index) => (
-            <li className="scroll-item flex" key={index}>
-              <img src={skillStar} />
-              <span>{item}</span>
-            </li>
-          ))}
 
-          {items.map((item, index) => (
-            <li className="scroll-item flex" key={index+'1'}>
-              <img src={skillStar} />
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul> */}
-
-        {/* </section> */}
+        <MovingWords />
 
         {/* Live Projects Section */}
         <section className="live-projects">
@@ -192,12 +188,12 @@ const Profile = () => {
                 onClick={() => navigator("/project/" + project.uniqueId)}
               >
                 <div className="project-image-container">
-                  <Video url={video} className="project-video" />
+                  <Video url={project.video} className="project-video" />
                   <div className={"project-badges"}>
                     <button
                       className={`${"live-" + project.class} badge-category`}
                     >
-                     {project?.live ? project.live :"Live"}
+                      {project?.live ? project.live : "Live"}
                     </button>
                     <button
                       className={`${"badge-" + project.class}  badge-category`}
@@ -242,7 +238,7 @@ const Profile = () => {
               <div
                 className="creation-card"
                 key={creation.id}
-                onClick={() => setSelectedImage(creation.image)}
+                onClick={() => setSelectedImage(creation.mainImage)}
                 // onClick={() => navigator("/project/" + creation.uniqueId)}
               >
                 <img
@@ -414,6 +410,7 @@ const projects = [
   {
     id: 1,
     uniqueId: uniqueIdForProject.oneGolde,
+    video:asset.oneGolde.video,
     title: "OneGold",
     category: "Online Trading",
     description:
@@ -426,6 +423,7 @@ const projects = [
   {
     id: 2,
     title: "APMEX",
+    video:asset.apmex.video,
     uniqueId: uniqueIdForProject.apmex,
     category: "E-Commerce",
     description:
@@ -441,6 +439,8 @@ const projects = [
     uniqueId: uniqueIdForProject.yoloWorks,
     category: "E-Learning",
     live: "Product",
+    video:asset.surgtest.video,
+
     description:
       "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy",
     image: asset.yoloWorks.liveProjectImage,
@@ -451,6 +451,7 @@ const projects = [
   {
     id: 3,
     title: "Surgtest",
+    video:asset.surgtest.video,
     uniqueId: uniqueIdForProject.surgtest,
     category: "E-Learning",
     description:
@@ -465,6 +466,7 @@ const projects = [
   {
     id: 5,
     title: "Vittae",
+    video:asset.vitte.video,
     uniqueId: uniqueIdForProject.vittae,
     category: "Finance",
     description:
@@ -502,6 +504,7 @@ const creations = [
   {
     id: 1,
     image: asset.awetome.projectimage,
+    mainImage:asset.awetome.projectMainImage,
     uniqueId: uniqueIdForProject.awetome,
     alt: "Creation 1",
     projectName: "Awetome",
@@ -523,6 +526,7 @@ const creations = [
   {
     id: 2,
     image: asset.vee2care.projectimage,
+    mainImage:asset.vee2care.projectMainImage,
     alt: "Creation 2",
     uniqueId: uniqueIdForProject.vee2Care,
     projectName: "Vee 2 Care",
@@ -540,6 +544,7 @@ const creations = [
   {
     id: 7,
     image: asset.limes.projectimage,
+    mainImage:asset.limes.projectMainImage,
     alt: "Creation 7",
     uniqueId: uniqueIdForProject.limes,
     projectName: "LMES",
@@ -562,6 +567,7 @@ const creations = [
   {
     id: 3,
     image: asset.erpOne.projectimage,
+    mainImage:asset.erpOne.projectMainImage,
     alt: "Creation 3",
     uniqueId: uniqueIdForProject.erpOne,
     projectName: "ERP One",
@@ -579,6 +585,7 @@ const creations = [
   {
     id: 4,
     image: asset.tnulm.projectimage,
+    mainImage:asset.tnulm.projectMainImage,
     alt: "Creation 4",
     uniqueId: uniqueIdForProject.tnulm,
     projectName: "TNULM",
@@ -600,6 +607,7 @@ const creations = [
   {
     id: 5,
     image: asset.hevanly.projectimage,
+    mainImage:asset.hevanly.projectMainImage,
     alt: "Creation 5",
     projectName: "Heavenly",
     uniqueId: uniqueIdForProject.hevanly,
@@ -621,6 +629,7 @@ const creations = [
   {
     id: 6,
     image: asset.getDiety.projectimage,
+    mainImage:asset.getDiety.projectMainImage,
     alt: "Creation 6",
     uniqueId: uniqueIdForProject.getDiety,
     projectName: "Get Diety",
@@ -642,6 +651,7 @@ const creations = [
   {
     id: 7,
     image: asset.bioDime.projectimage,
+    mainImage:asset.bioDime.projectMainImage,
     alt: "Creation 7",
     uniqueId: uniqueIdForProject.bioDime,
     projectName: "Bio Dime",

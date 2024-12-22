@@ -5,6 +5,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import { projectInfo, uniqueIdForProject } from "../Const";
 import asset from "../assets";
 import { DesktopIcon, MobileIcon } from "../assets/Svg";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const Project = () => {
   const navigate = useNavigate();
@@ -17,14 +19,30 @@ const Project = () => {
     uniqueIdForProject.yoloWorks,
     uniqueIdForProject.vittae,
   ].sort((a, b) => a - b);
-  let got = projectInfo.find((i) => i.uniqueId == id);
-  const selectedProject = got ? got : projectInfo[0];
-  const prevButtonDisable = id != paginationLength[0];
-  const nextButtonDiable = id != paginationLength[paginationLength.length - 1];
+
+  useEffect(() => {
+    const yes = paginationLength.includes(id);
+    if (yes) {
+    } else {
+      navigate("/*");
+    }
+  }, []);
+
+  const selectedProject = projectInfo.find((i) => i.uniqueId == id);
+
+  if(!selectedProject) {
+    navigate("/*");
+    return
+  }
+
+  const prevButtonDisable = paginationLength.findIndex((i) => i == id) != 0;
+  const nextButtonDiable =
+    paginationLength.findIndex((i) => i == id) != paginationLength.length - 1;
+  const currentIndex = paginationLength.findIndex((i) => i == id);
 
   const paginationPrev = () => {
     if (prevButtonDisable) {
-      navigate(`/project/${id - 1}`);
+      navigate(`/project/${paginationLength[currentIndex - 1]}`);
     } else {
       window.alert("Start of the project");
     }
@@ -32,7 +50,7 @@ const Project = () => {
 
   const paginationNext = () => {
     if (nextButtonDiable) {
-      navigate(`/project/${id + 1}`);
+      navigate(`/project/${paginationLength[currentIndex + 1]}`);
     } else {
       window.alert("end of the project");
     }
@@ -91,7 +109,10 @@ const Project = () => {
           {selectedProject.platforms.map((i) => (
             <>
               <button className="app-icon flex-flex-start">
-                <i className="flex mr-4"> {i.img == 0 ? <MobileIcon /> : <DesktopIcon />}</i>{" "}
+                <i className="flex mr-4">
+                  {" "}
+                  {i.img == 0 ? <MobileIcon /> : <DesktopIcon />}
+                </i>{" "}
                 <span>{i.content}</span>
               </button>
             </>

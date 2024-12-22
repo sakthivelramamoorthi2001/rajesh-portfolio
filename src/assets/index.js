@@ -46,6 +46,14 @@ import iconTnulm from "./tnulm/ProjectIcon.png";
 import iconHdfc from "./hdfc/ProjectIcon.png";
 // import iconNews from './hdfc'
 
+
+//video 
+import vitteVideo from '../assets/vitte/projectVideo.mp4'
+import surgtestVideo from '../assets/surgtest/projectVideo.mp4'
+import onegoldVideo from '../assets/onegold/projectVideo.mp4'
+import apmexVideo from '../assets/apmex/projectVideo.mp4'
+
+
 import dummyImagg from "./dummyImage.png";
 
 const asset = {
@@ -96,18 +104,22 @@ const asset = {
     projectTopMainImage: oneGoldMainTopImage,
     projectMainImage: OneGoldprojectMainImage,
     iconOfProject: iconOneGold,
+    video:onegoldVideo,
   },
   apmex: {
     liveProjectImage: liveProjectImageApmex,
     projectTopMainImage: apmexMainTopImage,
     projectMainImage: ApmexprojectMainImage,
     iconOfProject: iconOneApmex,
+    video:apmexVideo,
+
   },
   surgtest: {
     liveProjectImage: liveProjectImageSurgtest,
     projectTopMainImage: surgtestMainTopImage,
     projectMainImage: SurgtestprojectMainImage,
     iconOfProject: iconSurgtes,
+    video:surgtestVideo,
   },
   limes: {
     liveProjectImage: liveProjectImageLimes,
@@ -127,6 +139,7 @@ const asset = {
     projectTopMainImage: vitteMainTopImage,
     projectMainImage: VitteprojectMainImage,
     iconOfProject: dummyImagg,
+    video:vitteVideo
   },
 };
 

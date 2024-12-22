@@ -6,7 +6,7 @@
 }
 
 .portfolio-container-hide {
-  opacity: 0;
+  display: none;
 }
 .portfolio-header {
   padding: 0px 250px;
@@ -99,29 +99,35 @@
   font-family: "Gilroy-Regular", sans-serif;
 }
 
-.skills-section,
-.scroll-container {
-  background-color: #afd980;
-  padding: 8px;
-  margin-top: 20px;
-}
-
 .skills-section ul {
   display: flex;
   align-items: center;
   margin: 0px;
   justify-content: flex-start;
-  height: 64px;
+  padding: 16px;
 }
 
 .skills-section ul li {
   list-style: none;
-  margin: 0px 12px;
-  font-size: 20px;
+  margin: 0px 32px;
   font-weight: 400;
   min-width: fit-content;
   width: fit-content;
-  font-family: "Gilroy-Medium", sans-serif;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.skills-section ul li span {
+  font-size: 24px;
+  font-family: "Gilroy-Bold", sans-serif;
+  font-weight: 400;
+}
+
+.skills-section svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
 }
 
 .skills-section .scroll-item img {
@@ -129,14 +135,17 @@
 }
 
 .scroll-container {
-  overflow: hidden; /* Hide the overflow for a clean look */
-  width: 100%; /* Set container width */
+  overflow: hidden;
+  width: 100%;
   position: relative;
+  background-color: #afd980;
+  margin-top: 20px;
 }
 
 .scroll-content {
   display: flex;
-  /* animation: scroll-circle 10s linear infinite; Smooth infinite scrolling */
+  overflow: visible;
+  animation: scroll-circle 25s linear infinite;
   align-items: center;
   justify-content: space-evenly;
 }
@@ -151,7 +160,7 @@
     transform: translateX(0); /* Start at initial position */
   }
   100% {
-    transform: translateX(-50%); /* Move by half the content width */
+    transform: translateX(-300%); /* Move by half the content width */
   }
 }
 
@@ -184,13 +193,27 @@
   height: 100%;
   border-radius: 40px;
   margin-bottom: 40px;
+  position: relative;
 }
 
-.live-projects .project-card:hover {
+.live-projects .project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #3d3d3d;
-  transition: background-color 1s ease-in !important;
+  border-radius: 40px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.live-projects .project-card:hover::before {
+  /* transition: background-color 1s ease-in !important;
   background: #3d3d3d;
-  transition: 1s;
+  transition: 1s; */
+  opacity: 1;
 }
 
 .live-projects .project-card:hover .vide-case-project-icon {
@@ -279,6 +302,7 @@
 .live-projects .project-info {
   text-align: left;
   margin: 30px 20px;
+  position: relative;
 }
 
 .live-projects .project-info h3 {
@@ -568,6 +592,24 @@
 }
 
 @media screen and (max-width: 500px) {
+  .skills-section ul {
+    padding: 8px;
+  }
+
+  .skills-section ul li {
+    align-items: center;
+    margin: 0px 18px;
+  }
+
+  .scroll-content {
+    animation: scroll-circle 15s linear infinite;
+  }
+
+  .skills-section ul li span {
+    font-size: 16px !important;
+    font-family: "Gilroy-Medium", sans-serif;
+  }
+
   .design-process .step {
     width: calc(80% - 10px) !important;
   }
@@ -843,18 +885,29 @@
 }
 
 .fullScreenImagePopup {
-  width: 100%;
-  height: 100%;
   background-color: black;
-  z-index: 1;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
 }
 
 .preview-image {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 100%;
+}
+
+.preview-image section {
+  height: 500px;
+  width: 500px;
+  position: relative;
+}
+
+.preview-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .close-icon {
@@ -864,6 +917,7 @@
   width: 32px;
   height: 32px;
   z-index: 3;
+  cursor: pointer;
 }
 
 .preview {

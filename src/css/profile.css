@@ -481,6 +481,16 @@
   margin: 8px;
 }
 
+.project_and_client .project-icon-image img {
+  width: 104px;
+  max-width: 100px;
+  height: fit-content;
+}
+
+.project_and_client .project-icon-image .tnulm-icon {
+  width: 50px !important;
+}
+
 .more-creations-section .app-icons {
   gap: 6px;
 }
@@ -589,18 +599,16 @@
   .about .contact {
     padding: 0px !important;
   }
-
 }
 
 @media screen and (min-width: 550px) {
   .hover-area {
     position: relative;
-    overflow: hidden;  
+    overflow: hidden;
     transition: background-color 0.3s ease;
-    display: inline-block;
-    cursor: pointer; 
+    cursor: pointer;
   }
-  
+
   /* The circle that follows the cursor */
   .cursor-circle {
     box-shadow: 0px 2px 43px 53px blue;
@@ -615,7 +623,6 @@
     transition: transform 0.1s ease;
     opacity: 0;
   }
-  
 }
 
 @media screen and (max-width: 500px) {
@@ -658,6 +665,15 @@
 
   .project-icon-image {
     width: 100%;
+  }
+
+  .project_and_client .project-icon-image img {
+    width: 60px !important;
+    max-width: 80px !important;
+  }
+
+  .project_and_client .project-icon-image .tnulm-icon {
+    width: 30px !important;
   }
 
   .live-projects .live-projects-title {
@@ -807,7 +823,6 @@
     gap: 1px;
   }
 
-
   .portfolio-header,
   .live-projects,
   .more-creations-section {
@@ -817,6 +832,15 @@
   .profile-section .portfolio-title {
     line-height: 32px !important;
   }
+
+
+.preview-image .type-2 {
+  object-fit: contain !important;
+} 
+
+.preview-image .type-1 {
+  object-fit: cover !important;
+}
 
   .live-projects {
     background-color: #edf4ff;
@@ -840,7 +864,7 @@
   }
 
   .preview-image section {
-    height: 55% !important;
+    height: 400px !important;
   }
 
   .close-icon {
@@ -849,7 +873,6 @@
     width: 28px !important;
     height: 28px !important;
   }
-  
 }
 .design-process .step img {
   width: 48px;
@@ -902,11 +925,11 @@
 
 .about .contact_info a {
   list-style: none;
+  margin: 8px 0px;
   cursor: pointer;
   color: #212121;
   font-size: 18px;
   font-weight: 400;
-  text-decoration: underline;
   font-family: "Gilroy-Regular", sans-serif;
 }
 
@@ -936,7 +959,6 @@
   height: 100%;
 }
 
-
 .preview-image section {
   height: 80%;
   width: 80%;
@@ -944,15 +966,14 @@
   position: relative;
 }
 
-
 .preview-image img {
   max-width: 100%;
   max-height: 100%;
   width: 100%;
-  object-fit: fill;
   height: 100%;
   border-radius: 8px;
 }
+
 
 .close-icon {
   position: absolute;
@@ -985,6 +1006,11 @@
 .word {
   display: inline-block;
   margin-right: 10px; /* Adjust spacing between words (reduce space) */
+}
+
+
+.pagination > * {
+  color: black !important;
 }
 
 @keyframes move {

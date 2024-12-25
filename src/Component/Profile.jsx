@@ -76,7 +76,7 @@ const MovingWords = () => {
 
 const Profile = () => {
   const navigator = useNavigate();
-  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedImage, setSelectedImage] = useState();
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -94,8 +94,7 @@ const Profile = () => {
     checkMobile();
 
     if(!window.innerWidth <= 550){
-      const hoverArea = document.querySelector(".hover-area");
-
+     const hoverArea = document.querySelector(".hover-area");
     const existingCircle = document.querySelector(".cursor-circle");
 
     if (existingCircle) {
@@ -123,6 +122,11 @@ const Profile = () => {
 
     window.addEventListener("resize", checkMobile);
     return () => {
+      const existingCircle = document.querySelector(".cursor-circle");
+
+    if (existingCircle) {
+      existingCircle.remove();
+    }
       window.removeEventListener("resize", checkMobile);
     };
   }, []);
@@ -148,7 +152,7 @@ const Profile = () => {
                     fill="white"
                   />
                 </svg>
-                <img src={selectedImage} alt="" className="preview-image" />
+                <img src={selectedImage?.img} alt="" className={`${selectedImage?.class} preview-image`}  />
               </section>
             </div>{" "}
           </div>
@@ -222,8 +226,8 @@ const Profile = () => {
 
           <ul className="flex">
             {clientAndProjectIcon.map((i) => (
-              <li className="project-icon-image">
-                <img src={i} />
+              <li className="project-icon-image flex">
+                <img src={i.src} className={i.className} />
               </li>
             ))}
           </ul>
@@ -297,8 +301,10 @@ const Profile = () => {
                 className="creation-card"
                 key={creation.id}
                 onClick={() =>
-                  setSelectedImage(
-                    isMobile ? creation?.mainImageMobile : creation.mainImage
+                  setSelectedImage({
+                    img:isMobile ? creation?.mainImageMobile.img : creation.mainImage,
+                    class:isMobile ? creation?.mainImageMobile.class :''
+                  }
                   )
                 }
                 // onClick={() => navigator("/project/" + creation.uniqueId)}
@@ -405,8 +411,8 @@ const Profile = () => {
             <div className="border_line"></div>
 
             <div className="contact_info">
-              <a>
-                <i>
+              <a className="flex underline">
+                <i  className="flex">
                   <svg
                     width="21"
                     height="22"
@@ -422,22 +428,22 @@ const Profile = () => {
                 </i>
                 <span>Check out Linkedin</span>
               </a>
-              <a>
-                <i>
+              <a  className="flex underline">
+                <i  className="flex">
                   <DesktopIcon />
                 </i>
                 <span>Portfolio Web Version</span>
               </a>
 
-              <a>
-                <i>
+              <a  className="flex underline">
+                <i  className="flex">
                   <MobileIcon />
                 </i>
                 <span>Portfolio Mobile Version</span>
               </a>
 
-              <a>
-                <i>
+              <a className="flex ">
+                <i className="flex">
                   <svg
                     width="23"
                     height="23"
@@ -502,7 +508,6 @@ const projects = [
     category: "E-Learning",
     live: "Product",
     video: asset.surgtest.video,
-
     description:
       "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy",
     image: asset.yoloWorks.liveProjectImage,
@@ -567,176 +572,113 @@ const creations = [
     id: 1,
     image: asset.awetome.projectimage,
     mainImage: asset.awetome.projectMainImage,
-    mainImageMobile: asset.awetome.projectMainImage,
+    mainImageMobile: { img: asset.awetome.projectMainImage, class: "type-1" },
     uniqueId: uniqueIdForProject.awetome,
-    alt: "Creation 1",
+    class: "",
     projectName: "Awetome",
     platforms: [
-      {
-        content: "Mobile App",
-        img: 0,
-      },
-      {
-        content: "Web Design",
-        img: 1,
-      },
-      {
-        content: "Web Admin",
-        img: 1,
-      },
+      { content: "Mobile App", img: 0 },
+      { content: "Web Design", img: 1 },
+      { content: "Web Admin", img: 1 },
     ],
   },
   {
     id: 2,
     image: asset.vee2care.projectimage,
     mainImage: asset.vee2care.projectMainImage,
-    mainImageMobile: asset.vee2care.projectMainImageMobile,
-    alt: "Creation 2",
+    mainImageMobile: { img: asset.vee2care.projectMainImageMobile, class: "type-1" },
+    class: "",
     uniqueId: uniqueIdForProject.vee2Care,
     projectName: "Vee 2 Care",
     platforms: [
-      {
-        content: "Mobile App",
-        img: 0,
-      },
-      {
-        content: "Web Design",
-        img: 1,
-      },
+      { content: "Mobile App", img: 0 },
+      { content: "Web Design", img: 1 },
     ],
   },
   {
     id: 7,
     image: asset.limes.projectimage,
     mainImage: asset.limes.projectMainImage,
-    mainImageMobile: asset.limes.projectMainImageMobile,
-    alt: "Creation 7",
+    mainImageMobile: { img: asset.limes.projectMainImageMobile, class: "type-2" },
+    class: "",
     uniqueId: uniqueIdForProject.limes,
     projectName: "LMES",
     platforms: [
-      {
-        content: "Mobile App",
-        img: 0,
-      },
-      {
-        content: "Web Design",
-        img: 1,
-      },
-      {
-        content: "Web Admin",
-        img: 1,
-      },
+      { content: "Mobile App", img: 0 },
+      { content: "Web Design", img: 1 },
+      { content: "Web Admin", img: 1 },
     ],
   },
-
   {
     id: 3,
     image: asset.erpOne.projectimage,
     mainImage: asset.erpOne.projectMainImage,
-    mainImageMobile: asset.erpOne.projectMainImageMobile,
-    alt: "Creation 3",
+    mainImageMobile: { img: asset.erpOne.projectMainImageMobile, class: "type-1" },
+    class: "",
     uniqueId: uniqueIdForProject.erpOne,
     projectName: "ERP One",
     platforms: [
-      {
-        content: "Mobile App",
-        img: 0,
-      },
-      {
-        content: "Web Design",
-        img: 1,
-      },
-    ],
-  },
-  {
-    id: 4,
-    image: asset.tnulm.projectimage,
-    mainImage: asset.tnulm.projectMainImage,
-    mainImageMobile: asset.tnulm.projectMainImageMobile,
-    alt: "Creation 4",
-    uniqueId: uniqueIdForProject.tnulm,
-    projectName: "TNULM",
-    platforms: [
-      {
-        content: "Mobile App",
-        img: 0,
-      },
-      {
-        content: "Web Design",
-        img: 1,
-      },
-      {
-        content: "Web Admin",
-        img: 1,
-      },
+      { content: "Mobile App", img: 0 },
+      { content: "Web Design", img: 1 },
     ],
   },
   {
     id: 5,
     image: asset.hevanly.projectimage,
     mainImage: asset.hevanly.projectMainImage,
-    mainImageMobile: asset.hevanly.projectMainImageMobile,
-    alt: "Creation 5",
+    mainImageMobile: { img: asset.hevanly.projectMainImageMobile, class: "type-2" },
+    class: "",
     projectName: "Heavenly",
     uniqueId: uniqueIdForProject.hevanly,
     platforms: [
-      {
-        content: "Mobile App",
-        img: 0,
-      },
-      {
-        content: "Web Design",
-        img: 1,
-      },
-      {
-        content: "Web Admin",
-        img: 1,
-      },
+      { content: "Mobile App", img: 0 },
+      { content: "Web Design", img: 1 },
+      { content: "Web Admin", img: 1 },
+    ],
+  },
+  {
+    id: 4,
+    image: asset.tnulm.projectimage,
+    mainImage: asset.tnulm.projectMainImage,
+    mainImageMobile: { img: asset.tnulm.projectMainImageMobile, class: "type-2" },
+    class: "",
+    uniqueId: uniqueIdForProject.tnulm,
+    projectName: "TNULM",
+    platforms: [
+      { content: "Mobile App", img: 0 },
+      { content: "Web Design", img: 1 },
+      { content: "Web Admin", img: 1 },
     ],
   },
   {
     id: 6,
     image: asset.getDiety.projectimage,
     mainImage: asset.getDiety.projectMainImage,
-    mainImageMobile: asset.getDiety.projectMainImageMobile,
-    alt: "Creation 6",
+    mainImageMobile: { img: asset.getDiety.projectMainImageMobile, class: "type-2" },
+    class: "",
     uniqueId: uniqueIdForProject.getDiety,
     projectName: "Get Diety",
     platforms: [
-      {
-        content: "Mobile App",
-        img: 0,
-      },
-      {
-        content: "Web Design",
-        img: 1,
-      },
-      {
-        content: "Web Admin",
-        img: 1,
-      },
+      { content: "Mobile App", img: 0 },
+      { content: "Web Design", img: 1 },
+      { content: "Web Admin", img: 1 },
     ],
   },
   {
     id: 7,
     image: asset.bioDime.projectimage,
     mainImage: asset.bioDime.projectMainImage,
-    mainImageMobile: asset.bioDime.projectMainImageMobile,
-    alt: "Creation 7",
+    mainImageMobile: { img: asset.bioDime.projectMainImageMobile, class: "type-2" },
+    class: "",
     uniqueId: uniqueIdForProject.bioDime,
     projectName: "Bio Dime",
     platforms: [
-      {
-        content: "Mobile App",
-        img: 0,
-      },
-      {
-        content: "Web Admin",
-        img: 1,
-      },
+      { content: "Mobile App", img: 0 },
+      { content: "Web Admin", img: 1 },
     ],
   },
 ];
+
 
 const designProcess = [
   {
@@ -766,13 +708,16 @@ const designProcess = [
   },
 ];
 
+import hdfcIcon from '../assets/hdfcProjectIcon.png';
+import newsIcon from '../assets/newsProjectIcon.png'
 const clientAndProjectIcon = [
-  asset.oneGolde.iconOfProject,
-  asset.apmex.iconOfProject,
-  asset.limes.iconOfProject,
-  asset.surgtest.iconOfProject,
-  asset.apmex.iconOfProject,
-  asset.limes.iconOfProject,
-  asset.surgtest.iconOfProject,
-  asset.surgtest.iconOfProject,
+  { src: asset.oneGolde.iconOfProject, className: "one-golde-icon" },
+  { src: asset.apmex.iconOfProject, className: "apmex-icon" },
+  { src: asset.limes.iconOfProject, className: "limes-icon" },
+  { src: asset.surgtest.iconOfProject, className: "surgtest-icon" },
+  { src: asset.tnulm.iconOfProject, className: "tnulm-icon" },
+  { src: asset.vitte.iconOfProject, className: "vitte-icon" },
+  { src: hdfcIcon, className: "hdfc-icon" },
+  { src: newsIcon, className: "news-icon" }
 ];
+

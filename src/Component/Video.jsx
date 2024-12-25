@@ -9,6 +9,10 @@ const Video = ({ url, className }) => {
     // Play video when the component mounts or becomes visible
     const playVideo = () => {
       if (video) {
+        const playButton = video.querySelector("#playButton");
+        if (playButton) {
+          playButton.style.display = "none"; // Hide the play button
+        }
         video.play().catch((error) => {
           console.error("Autoplay failed:", error);
         });
@@ -17,7 +21,6 @@ const Video = ({ url, className }) => {
 
     playVideo();
 
-    // Handle visibility changes (useful in SPA)
     document.addEventListener("visibilitychange", playVideo);
 
     return () => {

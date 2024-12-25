@@ -221,6 +221,9 @@
   margin-right: 0;
 }
 
+.pagination > * {
+  color: black !important;
+}
 
 @media screen and (max-width: 1024px) {
 }
@@ -358,3 +361,5 @@
     margin-top: 32px;
   }
 }
+
+

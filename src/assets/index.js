@@ -57,7 +57,7 @@ import iconOneApmex from "./apmex/ProjectIcon.png";
 import iconOneLimes from "./limes/ProjectIcon.png";
 import iconSurgtes from "./surgtest/ProjectIcon.png";
 import iconTnulm from "./tnulm/ProjectIcon.png";
-// import iconVitte from './vitte/ProjectIcon.png';
+import iconVitte from './vitte/ProjectIcon.png';
 import iconHdfc from "./hdfc/ProjectIcon.png";
 // import iconNews from './hdfc'
 
@@ -161,7 +161,7 @@ const asset = {
     liveProjectImage: dummyImagg,
     projectTopMainImage: vitteMainTopImage,
     projectMainImage: VitteprojectMainImage,
-    iconOfProject: dummyImagg,
+    iconOfProject: iconVitte,
     video: vitteVideo,
   },
 };

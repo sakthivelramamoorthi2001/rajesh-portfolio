@@ -133,8 +133,17 @@ body {
   cursor: pointer;;
 }
 
+.underline{
+  text-decoration: underline;
+}
 i {
   cursor: pointer;;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  pointer-events: none;
+  opacity: 0;
 }
 
 

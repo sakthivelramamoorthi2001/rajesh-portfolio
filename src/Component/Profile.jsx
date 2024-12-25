@@ -224,7 +224,7 @@ const Profile = () => {
             Top clients I've worked with
           </h2>
 
-          <ul className="flex">
+          <ul className="flex project-icon-list ">
             {clientAndProjectIcon.map((i) => (
               <li className="project-icon-image flex">
                 <img src={i.src} className={i.className} />

@@ -780,9 +780,6 @@
     gap: 1px;
   }
 
-  .preview-image {
-    width: 75%;
-  }
 
   .portfolio-header,
   .live-projects,
@@ -814,6 +811,16 @@
   .about .contact_info a {
     margin-bottom: 12px;
   }
+
+  .preview-image section {
+    height: 55% !important;
+  }
+
+  .close-icon {
+    right: 16px !important;
+    top: -16px !important;
+  }
+  
 }
 .design-process .step img {
   width: 48px;
@@ -887,6 +894,8 @@
 .fullScreenImagePopup {
   background-color: black;
   height: 100vh;
+  width: 100%;
+  position: fixed;
 }
 
 .preview-image {
@@ -898,22 +907,26 @@
   height: 100%;
 }
 
+
 .preview-image section {
-  height: 500px;
-  width: 500px;
+  height: 80%;
+  width: 80%;
+  padding: 5%;
   position: relative;
 }
+
 
 .preview-image img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .close-icon {
   position: absolute;
-  right: 0;
-  top: -32px;
+  right: 72px;
+  top: 32px;
   width: 32px;
   height: 32px;
   z-index: 3;

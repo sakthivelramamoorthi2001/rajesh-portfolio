@@ -1,0 +1,40 @@
+
+.pdf-view-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.pdf-view {
+    position: relative;
+}
+
+.pdf-view-web-em {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    border: none;
+}
+
+
+
+.header_of_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.header_of_info .close-icon-pdf {
+    width: 14px;
+    height: 14px;
+}
+
+.header_of_info .back-icon {
+    width: 24px;
+    height: 24px;
+}

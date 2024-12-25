@@ -35,11 +35,11 @@ const itemsa = [
 ];
 
 const videResume = () => {
-  const link = document.createElement("a");
-  link.href = "/resume.pdf"; // Specify the PDF URL
-  document.body.appendChild(link); // Append the link to the document
-  link.click(); // Simulate a click event
-  document.body.removeChild(link);
+  // const link = document.createElement("a");
+  // link.href = "/resume.pdf"; // Specify the PDF URL
+  // document.body.appendChild(link); // Append the link to the document
+  // link.click(); // Simulate a click event
+  // document.body.removeChild(link);
 };
 
 const MovingWords = () => {
@@ -77,6 +77,56 @@ const MovingWords = () => {
 const Profile = () => {
   const navigator = useNavigate();
   const [selectedImage, setSelectedImage] = useState("");
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+    
+
+      if (window.innerWidth <= 550) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    checkMobile();
+
+    if(!window.innerWidth <= 550){
+      const hoverArea = document.querySelector(".hover-area");
+
+    const existingCircle = document.querySelector(".cursor-circle");
+
+    if (existingCircle) {
+      existingCircle.remove();
+    }
+
+    const circle = document.createElement("div");
+    circle.classList.add("cursor-circle");
+    document.body.appendChild(circle);
+
+    hoverArea.addEventListener("mousemove", (e) => {
+      const mouseX = e.pageX;
+      const mouseY = e.pageY;
+
+      circle.style.left = `${mouseX}px`;
+      circle.style.top = `${mouseY}px`;
+
+      circle.style.opacity = "9%";
+    });
+
+    hoverArea.addEventListener("mouseleave", () => {
+      circle.style.opacity = 0;
+    });
+    }
+
+    window.addEventListener("resize", checkMobile);
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
   return (
     <>
       {selectedImage && (
@@ -110,7 +160,11 @@ const Profile = () => {
           selectedImage && "portfolio-container-hide"
         }`}
       >
-        <header className="portfolio-header">
+
+
+          
+        <div className="hover-area">
+        <header className="portfolio-header hover-area">
           <section className="portfolio-header-content mobile-not-show web-not-show">
             <h1 className="portfolio-name">
               Rajeshkanna <span>Jayabalan</span>
@@ -147,10 +201,12 @@ const Profile = () => {
               partnerships, and thriving in complex, dynamic environments.
             </p>
 
-            <div className=" mobile-show flex">
+            <div className=" mobile-show flex ">
               <button
-                className="view-resume-button flex mb-24"
-                onClick={videResume}
+                className="view-resume-button flex mb-24 cursor-pointer"
+                onClick={() => {
+                  navigator('/resume')
+                }}
               >
                 <span>View Resume </span>
                 <img src={ViewResume} />
@@ -159,7 +215,7 @@ const Profile = () => {
           </section>
         </header>
 
-        <div className="project_and_client ">
+        <div className="project_and_client  ">
           <h2 className="project_and_client_title">
             Top clients I've worked with
           </h2>
@@ -172,6 +228,8 @@ const Profile = () => {
             ))}
           </ul>
         </div>
+        </div>
+
 
         {/* Skills Section */}
 
@@ -238,7 +296,11 @@ const Profile = () => {
               <div
                 className="creation-card"
                 key={creation.id}
-                onClick={() => setSelectedImage(creation.mainImage)}
+                onClick={() =>
+                  setSelectedImage(
+                    isMobile ? creation?.mainImageMobile : creation.mainImage
+                  )
+                }
                 // onClick={() => navigator("/project/" + creation.uniqueId)}
               >
                 <img
@@ -410,7 +472,7 @@ const projects = [
   {
     id: 1,
     uniqueId: uniqueIdForProject.oneGolde,
-    video:asset.oneGolde.video,
+    video: asset.oneGolde.video,
     title: "OneGold",
     category: "Online Trading",
     description:
@@ -423,7 +485,7 @@ const projects = [
   {
     id: 2,
     title: "APMEX",
-    video:asset.apmex.video,
+    video: asset.apmex.video,
     uniqueId: uniqueIdForProject.apmex,
     category: "E-Commerce",
     description:
@@ -439,7 +501,7 @@ const projects = [
     uniqueId: uniqueIdForProject.yoloWorks,
     category: "E-Learning",
     live: "Product",
-    video:asset.surgtest.video,
+    video: asset.surgtest.video,
 
     description:
       "A ground-up mobile trading solution that brought in advanced trading features such as SIP management and Stop/Loss strategy",
@@ -451,7 +513,7 @@ const projects = [
   {
     id: 3,
     title: "Surgtest",
-    video:asset.surgtest.video,
+    video: asset.surgtest.video,
     uniqueId: uniqueIdForProject.surgtest,
     category: "E-Learning",
     description:
@@ -466,7 +528,7 @@ const projects = [
   {
     id: 5,
     title: "Vittae",
-    video:asset.vitte.video,
+    video: asset.vitte.video,
     uniqueId: uniqueIdForProject.vittae,
     category: "Finance",
     description:
@@ -504,7 +566,8 @@ const creations = [
   {
     id: 1,
     image: asset.awetome.projectimage,
-    mainImage:asset.awetome.projectMainImage,
+    mainImage: asset.awetome.projectMainImage,
+    mainImageMobile: asset.awetome.projectMainImage,
     uniqueId: uniqueIdForProject.awetome,
     alt: "Creation 1",
     projectName: "Awetome",
@@ -526,7 +589,8 @@ const creations = [
   {
     id: 2,
     image: asset.vee2care.projectimage,
-    mainImage:asset.vee2care.projectMainImage,
+    mainImage: asset.vee2care.projectMainImage,
+    mainImageMobile: asset.vee2care.projectMainImageMobile,
     alt: "Creation 2",
     uniqueId: uniqueIdForProject.vee2Care,
     projectName: "Vee 2 Care",
@@ -544,7 +608,8 @@ const creations = [
   {
     id: 7,
     image: asset.limes.projectimage,
-    mainImage:asset.limes.projectMainImage,
+    mainImage: asset.limes.projectMainImage,
+    mainImageMobile: asset.limes.projectMainImageMobile,
     alt: "Creation 7",
     uniqueId: uniqueIdForProject.limes,
     projectName: "LMES",
@@ -567,7 +632,8 @@ const creations = [
   {
     id: 3,
     image: asset.erpOne.projectimage,
-    mainImage:asset.erpOne.projectMainImage,
+    mainImage: asset.erpOne.projectMainImage,
+    mainImageMobile: asset.erpOne.projectMainImageMobile,
     alt: "Creation 3",
     uniqueId: uniqueIdForProject.erpOne,
     projectName: "ERP One",
@@ -585,7 +651,8 @@ const creations = [
   {
     id: 4,
     image: asset.tnulm.projectimage,
-    mainImage:asset.tnulm.projectMainImage,
+    mainImage: asset.tnulm.projectMainImage,
+    mainImageMobile: asset.tnulm.projectMainImageMobile,
     alt: "Creation 4",
     uniqueId: uniqueIdForProject.tnulm,
     projectName: "TNULM",
@@ -607,7 +674,8 @@ const creations = [
   {
     id: 5,
     image: asset.hevanly.projectimage,
-    mainImage:asset.hevanly.projectMainImage,
+    mainImage: asset.hevanly.projectMainImage,
+    mainImageMobile: asset.hevanly.projectMainImageMobile,
     alt: "Creation 5",
     projectName: "Heavenly",
     uniqueId: uniqueIdForProject.hevanly,
@@ -629,7 +697,8 @@ const creations = [
   {
     id: 6,
     image: asset.getDiety.projectimage,
-    mainImage:asset.getDiety.projectMainImage,
+    mainImage: asset.getDiety.projectMainImage,
+    mainImageMobile: asset.getDiety.projectMainImageMobile,
     alt: "Creation 6",
     uniqueId: uniqueIdForProject.getDiety,
     projectName: "Get Diety",
@@ -651,7 +720,8 @@ const creations = [
   {
     id: 7,
     image: asset.bioDime.projectimage,
-    mainImage:asset.bioDime.projectMainImage,
+    mainImage: asset.bioDime.projectMainImage,
+    mainImageMobile: asset.bioDime.projectMainImageMobile,
     alt: "Creation 7",
     uniqueId: uniqueIdForProject.bioDime,
     projectName: "Bio Dime",

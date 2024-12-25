@@ -29,6 +29,21 @@ import SurgtestprojectMainImage from "./surgtest/projectMainImage.png";
 import LimesprojectMainImage from "./limes/projectMainImage.png";
 import VitteprojectMainImage from "./vitte/projectMainImage.png";
 
+// Adding mobile versions for all the above images
+import awetomeprojectMainImageMobile from "./awetome/projectMainImageMobile.png";
+import ErpprojectMainImageMobile from "./Erpone/projectMainImageMobile.png";
+import getDietyprojectMainImageMobile from "./getDiety/projectMainImageMobile.png";
+import vee2CareprojectMainImageMobile from "./vee2care/projectMainImageMobile.png";
+import tnulmprojectMainImageMobile from "./tnulm/projectMainImageMobile.png";
+import hevanlyprojectMainImageMobile from "./hevenly/projectMainImageMobile.png";
+import bioDimeprojectMainImageMobile from "./bigDime/projectMainImageMobile.png";
+// import OneGoldprojectMainImageMobile from "./onegold/projectMainImageMobile.png";
+// import ApmexprojectMainImageMobile from "./apmex/projectMainImageMobile.png";
+// import SurgtestprojectMainImageMobile from "./surgtest/projectMainImageMobile.png";
+import LimesprojectMainImageMobile from "./limes/projectMainImageMobile.png";
+// import VitteprojectMainImageMobile from "./vitte/projectMainImageMobile.png";
+
+
 
 //top main image
 import oneGoldMainTopImage from "./onegold/topMain.png";
@@ -61,41 +76,48 @@ const asset = {
     projectimage: awetomeProjectImage,
     projectTopMainImage: dummyImagg,
     projectMainImage: awetomeprojectMainImage,
+    projectMainImageMobile: awetomeprojectMainImageMobile, // Mobile version added
     iconOfProject: dummyImagg,
   },
   erpOne: {
     projectimage: ErpProjectImage,
     projectTopMainImage: dummyImagg,
     projectMainImage: ErpprojectMainImage,
+    projectMainImageMobile: ErpprojectMainImageMobile, // Mobile version added
     iconOfProject: dummyImagg,
   },
   getDiety: {
     projectimage: getDietyProjectImage,
     projectTopMainImage: dummyImagg,
     projectMainImage: getDietyprojectMainImage,
+    projectMainImageMobile: getDietyprojectMainImageMobile, // Mobile version added
     iconOfProject: dummyImagg,
   },
   vee2care: {
     projectimage: vee2CareProjectImage,
     projectTopMainImage: dummyImagg,
     projectMainImage: vee2CareprojectMainImage,
+    projectMainImageMobile: vee2CareprojectMainImageMobile, // Mobile version added
     iconOfProject: dummyImagg,
   },
   tnulm: {
     projectTopMainImage: dummyImagg,
     projectMainImage: tnulmprojectMainImage,
+    projectMainImageMobile: tnulmprojectMainImageMobile, // Mobile version added
     projectimage: tnulmProjectImage,
     iconOfProject: iconTnulm,
   },
   hevanly: {
     projectTopMainImage: dummyImagg,
     projectMainImage: hevanlyprojectMainImage,
+    projectMainImageMobile: hevanlyprojectMainImageMobile, // Mobile version added
     projectimage: hevanlyProjectImage,
     iconOfProject: dummyImagg,
   },
   bioDime: {
     projectTopMainImage: dummyImagg,
     projectMainImage: bioDimeprojectMainImage,
+    projectMainImageMobile: bioDimeprojectMainImageMobile, // Mobile version added
     projectimage: bioDimeProjectImage,
     iconOfProject: dummyImagg,
   },
@@ -104,27 +126,27 @@ const asset = {
     projectTopMainImage: oneGoldMainTopImage,
     projectMainImage: OneGoldprojectMainImage,
     iconOfProject: iconOneGold,
-    video:onegoldVideo,
+    video: onegoldVideo,
   },
   apmex: {
     liveProjectImage: liveProjectImageApmex,
     projectTopMainImage: apmexMainTopImage,
     projectMainImage: ApmexprojectMainImage,
     iconOfProject: iconOneApmex,
-    video:apmexVideo,
-
+    video: apmexVideo,
   },
   surgtest: {
     liveProjectImage: liveProjectImageSurgtest,
     projectTopMainImage: surgtestMainTopImage,
     projectMainImage: SurgtestprojectMainImage,
     iconOfProject: iconSurgtes,
-    video:surgtestVideo,
+    video: surgtestVideo,
   },
   limes: {
     liveProjectImage: liveProjectImageLimes,
     projectTopMainImage: dummyImagg,
     projectMainImage: LimesprojectMainImage,
+    projectMainImageMobile: LimesprojectMainImageMobile, // Mobile version added
     iconOfProject: iconOneLimes,
     projectimage: limeProjectImage,
   },
@@ -132,6 +154,7 @@ const asset = {
     liveProjectImage: dummyImagg,
     projectTopMainImage: dummyImagg,
     projectMainImage: dummyImagg,
+    projectMainImageMobile: dummyImagg, // Mobile version added
     iconOfProject: dummyImagg,
   },
   vitte: {
@@ -139,7 +162,7 @@ const asset = {
     projectTopMainImage: vitteMainTopImage,
     projectMainImage: VitteprojectMainImage,
     iconOfProject: dummyImagg,
-    video:vitteVideo
+    video: vitteVideo,
   },
 };
 

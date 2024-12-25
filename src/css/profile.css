@@ -60,6 +60,7 @@
   width: 140px;
   height: 140px;
   border-radius: 100%;
+  filter: grayscale(1);
 }
 
 .profile-section .portfolio-greeting {
@@ -224,6 +225,7 @@
 
 .live-projects .project-card:hover .project-video {
   position: relative;
+  filter: grayscale(1);
 }
 
 .live-projects .project-card:hover .project-video::after {
@@ -243,7 +245,8 @@
 }
 
 .live-projects .project-card:hover .badge-category {
-  background-color: #3d3d3d;
+  background-color: #3d3d3d !important;
+  background: #3d3d3d !important;
   color: white;
 }
 

@@ -252,6 +252,16 @@
 
   }
 
+  .back-icon-in-project svg{
+     width: 26px;
+    height: 26px;
+  }
+
+  .close-icon-in-project svg{
+    width: 16px;
+    height: 16px;
+  }
+
   .available {
     font-size: 16px !important;
   }

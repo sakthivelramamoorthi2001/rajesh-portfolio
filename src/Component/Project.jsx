@@ -56,9 +56,9 @@ const Project = () => {
     }
   };
   return (
-    <div>
+    <div className="">
       <div className="header_of_info">
-        <i onClick={() => navigate("/")}>
+        <i onClick={() => navigate("/")} className="back-icon-in-project">
           <svg
             width="43"
             height="42"
@@ -85,7 +85,7 @@ const Project = () => {
           </svg>
         </i>
 
-        <i onClick={() => navigate("/")}>
+        <i onClick={() => navigate("/")} className="close-icon-in-project">
           <svg
             width="18"
             height="18"

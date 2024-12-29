@@ -13,6 +13,7 @@ const Video = ({ url, className }) => {
         if (playButton) {
           playButton.style.display = "none"; // Hide the play button
         }
+        video.muted = true;
         video.play().catch((error) => {
           console.error("Autoplay failed:", error);
         });
@@ -32,9 +33,14 @@ const Video = ({ url, className }) => {
       className={className}
       src={url}
       ref={videoRef}
-      muted={true}
-      autoPlay={true}
-      loop={true}
+      // muted={true}
+      // autoPlay={true}
+      // loop={true}
+      autoPlay
+      muted
+      playsInline
+      preload="auto"
+      loop
       controls={false}
     ></video>
   );

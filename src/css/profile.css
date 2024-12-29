@@ -210,46 +210,6 @@
   transition: opacity 0.5s ease;
 }
 
-.live-projects .project-card:hover::before {
-  /* transition: background-color 1s ease-in !important;
-  background: #3d3d3d;
-  transition: 1s; */
-  opacity: 1;
-}
-
-.live-projects .project-card:hover .vide-case-project-icon {
-  transform: rotate(-60deg);
-  margin-left: 2px;
-  transition: 1s;
-}
-
-.live-projects .project-card:hover .project-video {
-  position: relative;
-  filter: grayscale(1);
-}
-
-.live-projects .project-card:hover .project-video::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(61, 61, 61, 0.7);
-  z-index: 2;
-}
-
-.live-projects .project-card:hover .badge-live {
-  background-color: #3d3d3d;
-  color: white;
-}
-
-.live-projects .project-card:hover .badge-category {
-  background-color: #3d3d3d !important;
-  background: #3d3d3d !important;
-  color: white;
-}
-
 .live-projects .project-card-type1 {
   transition: background-color 1s ease-in-out !important;
   background: radial-gradient(
@@ -449,26 +409,6 @@
   margin: 12px 0px;
 }
 
-.more-creations-section .creation-card:hover {
-  background-color: #dddddd;
-  transition: 0.5s;
-  transform-origin: center;
-}
-
-.more-creations-section .creation-card:hover .creation-svg-icon {
-  transition: 0.5s;
-  background-color: white;
-  padding: 12px;
-  border-radius: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.more-creations-section .creation-card:hover .app-icon {
-  background-color: #dddddd;
-  transition: 0.5s;
-}
 .more-creations-section .creation-card .creation-image {
   width: 100%;
   height: 100%;
@@ -493,12 +433,9 @@
   height: 100%;
 }
 
-
-
 .project_and_client .project-icon-image .tnulm-icon {
   width: 50px !important;
 }
-
 
 .more-creations-section .app-icons {
   gap: 6px;
@@ -632,6 +569,67 @@
     transition: transform 0.1s ease;
     opacity: 0;
   }
+
+  .live-projects .project-card:hover::before {
+    /* transition: background-color 1s ease-in !important;
+  background: #3d3d3d;
+  transition: 1s; */
+    opacity: 1;
+  }
+
+  .live-projects .project-card:hover .vide-case-project-icon {
+    transform: rotate(-60deg);
+    margin-left: 2px;
+    transition: 1s;
+  }
+
+  .live-projects .project-card:hover .project-video {
+    position: relative;
+    filter: grayscale(1);
+  }
+
+  .live-projects .project-card:hover .project-video::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(61, 61, 61, 0.7);
+    z-index: 2;
+  }
+
+  .live-projects .project-card:hover .badge-live {
+    background-color: #3d3d3d;
+    color: white;
+  }
+
+  .live-projects .project-card:hover .badge-category {
+    background-color: #3d3d3d !important;
+    background: #3d3d3d !important;
+    color: white;
+  }
+
+  .more-creations-section .creation-card:hover {
+    background-color: #dddddd;
+    transition: 0.5s;
+    transform-origin: center;
+  }
+
+  .more-creations-section .creation-card:hover .creation-svg-icon {
+    transition: 0.5s;
+    background-color: white;
+    padding: 12px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .more-creations-section .creation-card:hover .app-icon {
+    background-color: #dddddd;
+    transition: 0.5s;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -667,10 +665,9 @@
     align-items: center;
   }
 
-  .project_and_client .project-icon-list li{
+  .project_and_client .project-icon-list li {
     width: 45px !important;
   }
-
 
   .project_and_client .project-icon-image .tnulm-icon {
     width: 24px !important;
@@ -834,14 +831,13 @@
     line-height: 32px !important;
   }
 
+  .preview-image .type-2 {
+    object-fit: contain !important;
+  }
 
-.preview-image .type-2 {
-  object-fit: contain !important;
-} 
-
-.preview-image .type-1 {
-  object-fit: cover !important;
-}
+  .preview-image .type-1 {
+    object-fit: cover !important;
+  }
 
   .live-projects {
     background-color: #edf4ff;
@@ -975,7 +971,6 @@
   border-radius: 8px;
 }
 
-
 .close-icon {
   position: absolute;
   right: 72px;
@@ -1008,7 +1003,6 @@
   display: inline-block;
   margin-right: 10px; /* Adjust spacing between words (reduce space) */
 }
-
 
 .pagination > * {
   color: black !important;

@@ -21,6 +21,8 @@ const ScrollToTop = () => {
 
 const ProviderComponent = () => {
 
+  
+
   const setRoutes = () => {
     return ROUTE.map((route, index) => {
       const { path, component: Component } = route;

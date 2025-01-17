@@ -1,6 +1,6 @@
 body {
   font-family: "Gilroy-Bold", sans-serif;
-  margin: 0px ;
+  margin: 0px;
   padding: 0px;
 }
 
@@ -8,6 +8,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.column {
+  flex-direction: column;
 }
 
 .flex-btwn {
@@ -76,7 +80,6 @@ body {
   width: 100%;
 }
 
-
 .mr-2 {
   margin-right: 2px;
 }
@@ -99,22 +102,18 @@ body {
 
 .mr-20 {
   margin-right: 20px;
-
 }
 .mb-24 {
   margin-bottom: 24px;
- }
+}
 
 @media screen and (min-width: 600px) {
-  
   .web-not-show {
     display: none !important;
-
   }
 }
 
 @media screen and (max-width: 500px) {
- 
   .mobile-not-show {
     display: none !important;
   }
@@ -128,16 +127,15 @@ body {
   display: none;
 }
 
-
 .cursor-pointer {
-  cursor: pointer;;
+  cursor: pointer;
 }
 
-.underline{
+.underline {
   text-decoration: underline;
 }
 i {
-  cursor: pointer;;
+  cursor: pointer;
 }
 
 video::-webkit-media-controls-start-playback-button {
@@ -146,8 +144,16 @@ video::-webkit-media-controls-start-playback-button {
   opacity: 0;
 }
 
-
 video::-webkit-media-controls {
-  display: none !important; 
+  display: none !important;
 }
 
+.scroll-hide {
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+
+
+.scroll-hide::-webkit-scrollbar {
+  display: none;
+}

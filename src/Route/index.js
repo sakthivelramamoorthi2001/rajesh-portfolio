@@ -3,10 +3,15 @@ import Profile from "../Component/Profile";
 import Project from '../Component/Project'
 import ErrorComponent from '../Component/ErrorComponent'
 import PdfView from '../Component/PdfView'
+import MetalHome from '../pages/MetalHome'
 
 export const ROUTE = [
   {
-    path: "/",
+    path:'/',
+    component: MetalHome,
+  },
+  {
+    path: "/Profile",
     component: Profile,
   },
   {
